@@ -30,6 +30,7 @@
 		5BF1186527F8966F004A55E7 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		5BF1186727F89685004A55E7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5BF1186A27F896DB004A55E7 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		5BF1186C27F898BE004A55E7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +47,7 @@
 		5BF1183F27F89601004A55E7 = {
 			isa = PBXGroup;
 			children = (
+				5BF1186C27F898BE004A55E7 /* README.md */,
 				5BF1184A27F89601004A55E7 /* CipherEverything */,
 				5BF1184927F89601004A55E7 /* Products */,
 			);
