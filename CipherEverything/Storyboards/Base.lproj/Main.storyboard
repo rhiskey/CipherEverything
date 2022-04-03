@@ -3,6 +3,7 @@
     <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -60,7 +61,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="9Dm-lI-Jlb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="I3v-Kc-r3V">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -81,7 +82,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="passwordCell" textLabel="gmq-MF-HGE" style="IBUITableViewCellStyleDefault" id="sMe-6f-iYM">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="passwordCell" textLabel="gmq-MF-HGE" detailTextLabel="i8f-44-iQQ" imageView="YDZ-gh-LeF" style="IBUITableViewCellStyleValue1" id="sMe-6f-iYM">
                                 <rect key="frame" x="0.0" y="44.5" width="320" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sMe-6f-iYM" id="zDO-Hl-mfz">
@@ -89,12 +90,24 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gmq-MF-HGE">
-                                            <rect key="frame" x="16" y="0.0" width="288" height="43.5"/>
+                                            <rect key="frame" x="51.5" y="15" width="25" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="i8f-44-iQQ">
+                                            <rect key="frame" x="260" y="15" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YDZ-gh-LeF">
+                                            <rect key="frame" x="18.5" y="10" width="15.5" height="23"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <imageReference key="image" image="key" catalog="system" symbolScale="default"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -113,21 +126,80 @@
             </objects>
             <point key="canvasLocation" x="863" y="-448"/>
         </scene>
-        <!--Edit password-->
+        <!--Edit Password View Controller-->
         <scene sceneID="TbW-Ug-6xq">
             <objects>
                 <viewController id="Rbl-hQ-WpV" customClass="EditPasswordViewController" customModule="CipherEverything" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OR8-aC-DmB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="B9e-7v-cY7">
+                                <rect key="frame" x="16" y="96" width="288" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGX-wg-fTX">
+                                        <rect key="frame" x="0.0" y="0.0" width="41.5" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="J5u-Ff-BKO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4Dd-RU-6HY">
+                                        <rect key="frame" x="0.0" y="48" width="288" height="54"/>
+                                        <subviews>
+                                            <textField toolTip="Edit password" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cl3-mx-mcw">
+                                                <rect key="frame" x="0.0" y="10" width="223" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="password"/>
+                                                <connections>
+                                                    <action selector="checkPassword:" destination="Rbl-hQ-WpV" eventType="editingChanged" id="HPO-Nc-lNB"/>
+                                                </connections>
+                                            </textField>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZP9-nh-AzR">
+                                                <rect key="frame" x="239" y="11.5" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="editSwitched:" destination="Rbl-hQ-WpV" eventType="valueChanged" id="4GD-1p-DhF"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqP-cg-gof">
+                                        <rect key="frame" x="0.0" y="118" width="31" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="tJU-io-ZAp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="a5K-A3-Afe"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Dd-RU-6HY" secondAttribute="trailing" id="wJT-B1-Ihh"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="TqD-0A-PZm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TqD-0A-PZm" firstAttribute="trailing" secondItem="B9e-7v-cY7" secondAttribute="trailing" constant="16" id="7ru-AF-06S"/>
+                            <constraint firstItem="B9e-7v-cY7" firstAttribute="top" secondItem="TqD-0A-PZm" secondAttribute="top" id="neh-DP-86N"/>
+                            <constraint firstItem="B9e-7v-cY7" firstAttribute="leading" secondItem="TqD-0A-PZm" secondAttribute="leading" constant="16" id="q7c-HV-7vo"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Edit password" id="v3z-II-lYB"/>
+                    <navigationItem key="navigationItem" id="v3z-II-lYB"/>
+                    <connections>
+                        <outlet property="checkPasswordLB" destination="qqP-cg-gof" id="Fiz-GB-ERE"/>
+                        <outlet property="editSwitch" destination="ZP9-nh-AzR" id="aNM-hQ-scB"/>
+                        <outlet property="loginLB" destination="aGX-wg-fTX" id="gZ2-Q5-g7C"/>
+                        <outlet property="passwordTF" destination="Cl3-mx-mcw" id="Z7T-qU-rCa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IJH-jX-OkG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1789" y="-449"/>
+            <point key="canvasLocation" x="1788" y="-449.32533733133437"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="Gxi-Rr-6sG">
@@ -151,7 +223,7 @@
         <!--Login View Controller-->
         <scene sceneID="lyn-sP-cqN">
             <objects>
-                <viewController id="Qhk-hq-NMD" customClass="LoginViewController" customModule="WelcomeLoginScreen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Qhk-hq-NMD" customClass="LoginViewController" customModule="CipherEverything" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P2c-w2-7kM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -212,6 +284,7 @@
     </scenes>
     <resources>
         <image name="info.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="key" catalog="system" width="86" height="128"/>
         <image name="wallet.pass.fill" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

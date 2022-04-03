@@ -8,29 +8,52 @@
 import UIKit
 
 class PasswordsTableViewController: UITableViewController {
-
+    
+    var passwords: [Password]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.rowHeight = 80
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        passwords.count
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "passwordCell", for: indexPath)
+        var content = cell.defaultContentConfiguration()
+        
+        let account = passwords[indexPath.section]
+        
+        content.text = account.site
+        content.secondaryText = account.login
+        content.image = UIImage(systemName: "key")
+        
+        cell.contentConfiguration = content
+        
+        return cell
     }
+    
+    // MARK: = Table view customisation
+
+    // MARK: - Table view delegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let account = passwords[indexPath.section]
+        performSegue(withIdentifier: "showEditPassword", sender: account)
+    }
+    
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let editPasswordVC = segue.destination as? EditPasswordViewController else { return }
-//        TODO: pass here password model
-//        editPasswordVC.password = sender as? Password
+        editPasswordVC.account = sender as? Password
     }
 
 }
+
