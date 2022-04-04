@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+class DataManager {
+    
+    static let shared = DataManager()
+    
+    let passwords = Password.getPasswords()
+    let teamMembers = TeamMember.getTeamMember()
+    
+    private init() {}
+}
