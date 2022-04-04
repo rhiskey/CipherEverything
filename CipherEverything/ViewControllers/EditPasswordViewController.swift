@@ -27,8 +27,8 @@ class EditPasswordViewController: UIViewController, UITextFieldDelegate {
         
         passwordTF.delegate = self
         
-        title = account.site
-        loginLB.text = "Login: \(account.login)"
+        title = account.website
+//        loginLB.text = "Login: \(account.login)"
         passwordTF.text = account.password
         
         passwordRegularExpressionCheck(for: account.password)

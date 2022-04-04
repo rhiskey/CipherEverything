@@ -31,8 +31,8 @@ class PasswordsTableViewController: UITableViewController {
         
         let account = passwords[indexPath.section]
         
-        content.text = account.site
-        content.secondaryText = account.login
+        content.text = account.website
+//        content.secondaryText = 
         content.image = UIImage(systemName: "key")
         
         cell.contentConfiguration = content
