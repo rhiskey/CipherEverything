@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		5BBB893827F9FF6200E78E5C /* PasswordsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB893727F9FF6200E78E5C /* PasswordsTableViewController.swift */; };
 		5BBB893A27F9FF6D00E78E5C /* TeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB893927F9FF6D00E78E5C /* TeamTableViewController.swift */; };
-		5BBB893C27F9FF9600E78E5C /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB893B27F9FF9600E78E5C /* Password.swift */; };
+		5BBB893C27F9FF9600E78E5C /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB893B27F9FF9600E78E5C /* Account.swift */; };
 		5BBB893E27FA01CD00E78E5C /* EditPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB893D27FA01CD00E78E5C /* EditPasswordViewController.swift */; };
 		5BF1184C27F89601004A55E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF1184B27F89601004A55E7 /* AppDelegate.swift */; };
 		5BF1184E27F89601004A55E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF1184D27F89601004A55E7 /* SceneDelegate.swift */; };
@@ -25,7 +25,7 @@
 /* Begin PBXFileReference section */
 		5BBB893727F9FF6200E78E5C /* PasswordsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordsTableViewController.swift; sourceTree = "<group>"; };
 		5BBB893927F9FF6D00E78E5C /* TeamTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewController.swift; sourceTree = "<group>"; };
-		5BBB893B27F9FF9600E78E5C /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
+		5BBB893B27F9FF9600E78E5C /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		5BBB893D27FA01CD00E78E5C /* EditPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPasswordViewController.swift; sourceTree = "<group>"; };
 		5BF1184827F89601004A55E7 /* CipherEverything.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CipherEverything.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF1184B27F89601004A55E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				5BF1186727F89685004A55E7 /* TeamMember.swift */,
-				5BBB893B27F9FF9600E78E5C /* Password.swift */,
+				5BBB893B27F9FF9600E78E5C /* Account.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -209,7 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BBB893C27F9FF9600E78E5C /* Password.swift in Sources */,
+				5BBB893C27F9FF9600E78E5C /* Account.swift in Sources */,
 				5BF1185027F89601004A55E7 /* LoginViewController.swift in Sources */,
 				5BF1186627F8966F004A55E7 /* DataManager.swift in Sources */,
 				5BF1184C27F89601004A55E7 /* AppDelegate.swift in Sources */,
