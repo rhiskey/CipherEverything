@@ -61,7 +61,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="9Dm-lI-Jlb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="I3v-Kc-r3V">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="102"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -40,8 +40,6 @@ class PasswordsTableViewController: UITableViewController {
         return cell
     }
     
-    // MARK: = Table view customisation
-
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let account = passwords[indexPath.section]
