@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qhk-hq-NMD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k09-aq-gTc">
     <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -52,26 +52,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8C-JV-6dZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="863" y="556"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="9Yd-V0-zgi">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E3V-W3-Bym" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="9Dm-lI-Jlb"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="I3v-Kc-r3V">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="GCa-9R-LaO" kind="relationship" relationship="rootViewController" id="b1w-xD-1St"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VxP-wN-Yzu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1489" y="60"/>
+            <point key="canvasLocation" x="1860" y="555"/>
         </scene>
         <!--Passwords-->
         <scene sceneID="9gj-am-3az">
@@ -124,7 +105,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KxC-wu-tMJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="863" y="-448"/>
+            <point key="canvasLocation" x="1860" y="-450"/>
         </scene>
         <!--Edit Password View Controller-->
         <scene sceneID="TbW-Ug-6xq">
@@ -135,10 +116,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="B9e-7v-cY7">
-                                <rect key="frame" x="16" y="96" width="288" height="150"/>
+                                <rect key="frame" x="16" y="44" width="288" height="150"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGX-wg-fTX">
-                                        <rect key="frame" x="0.0" y="0.0" width="41.5" height="32"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGX-wg-fTX" userLabel="passwordLB">
+                                        <rect key="frame" x="0.0" y="0.0" width="78" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="J5u-Ff-BKO"/>
                                         </constraints>
@@ -193,19 +174,24 @@
                     <connections>
                         <outlet property="checkPasswordLB" destination="qqP-cg-gof" id="Fiz-GB-ERE"/>
                         <outlet property="editSwitch" destination="ZP9-nh-AzR" id="aNM-hQ-scB"/>
-                        <outlet property="loginLB" destination="aGX-wg-fTX" id="gZ2-Q5-g7C"/>
                         <outlet property="passwordTF" destination="Cl3-mx-mcw" id="Z7T-qU-rCa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IJH-jX-OkG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1788" y="-449.32533733133437"/>
+            <point key="canvasLocation" x="2687" y="-450"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="Gxi-Rr-6sG">
             <objects>
                 <tabBarController id="GCa-9R-LaO" customClass="TabBarViewController" customModule="CipherEverything" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="7uq-EP-NGn"/>
+                    <navigationItem key="navigationItem" id="7uq-EP-NGn">
+                        <barButtonItem key="rightBarButtonItem" title="Exit" id="FnY-qY-dzq">
+                            <connections>
+                                <segue destination="a7c-jQ-YfU" kind="unwind" identifier="logOutSegue" unwindAction="logOutFor:towards:" id="Mny-y2-nyH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="abQ-4Y-TZJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -217,10 +203,11 @@
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XD7-h6-yOs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="a7c-jQ-YfU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-497" y="61"/>
+            <point key="canvasLocation" x="498.75" y="60"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Log In-->
         <scene sceneID="lyn-sP-cqN">
             <objects>
                 <viewController id="Qhk-hq-NMD" customClass="LoginViewController" customModule="CipherEverything" customModuleProvider="target" sceneMemberID="viewController">
@@ -243,12 +230,20 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZX-7f-YT8">
                                         <rect key="frame" x="0.0" y="50" width="256" height="38"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <color key="tintColor" systemColor="systemBackgroundColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Log In">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                         </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="11"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="E3V-W3-Bym" kind="presentation" modalPresentationStyle="fullScreen" id="JxM-33-IN9"/>
+                                            <action selector="logInPressed" destination="Qhk-hq-NMD" eventType="touchUpInside" id="RcF-9b-ODM"/>
+                                            <segue destination="GCa-9R-LaO" kind="show" identifier="LogInSegue" id="hU1-CF-VaF"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="E7p-XM-Bpj">
@@ -256,8 +251,18 @@
                                         <subviews>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FhJ-uN-m9Y">
                                                 <rect key="frame" x="0.0" y="0.0" width="256" height="31"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                <color key="tintColor" systemColor="systemBackgroundColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Forgot Password?" titleAlignment="trailing"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <integer key="value" value="11"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="forgotPassButtonPressed" destination="Qhk-hq-NMD" eventType="touchUpInside" id="tCr-s1-KmH"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -275,11 +280,32 @@
                             <constraint firstItem="UDW-EG-Arn" firstAttribute="trailing" secondItem="HzK-TW-kn9" secondAttribute="trailing" constant="32" id="nxQ-bx-zF6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="9V1-1f-lf0"/>
+                    <navigationItem key="navigationItem" title="Log In" id="9V1-1f-lf0"/>
+                    <connections>
+                        <outlet property="passwordTF" destination="pGS-jK-Rcg" id="VLB-3u-ouW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dEh-al-bC0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2404" y="60"/>
+            <point key="canvasLocation" x="-351" y="60"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HBU-dN-UQ2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k09-aq-gTc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cch-ei-x4Y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Qhk-hq-NMD" kind="relationship" relationship="rootViewController" id="VkK-PP-X0r"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ys0-5r-89b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1239" y="60"/>
         </scene>
     </scenes>
     <resources>
@@ -288,6 +314,9 @@
         <image name="wallet.pass.fill" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

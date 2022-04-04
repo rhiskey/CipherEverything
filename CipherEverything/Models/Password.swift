@@ -7,20 +7,20 @@
 
 import Foundation
 
-struct Password {
+struct Account {
     
     let website: String
     let password: String
     
-    static func getPasswords() -> [Password] {
+    static func getAccounts() -> [Account] {
         
-        var passwords: [Password] = []
+        var accounts: [Account] = []
         
-        passwords.append(Password(website: "VK", password: "abc123"))
-        passwords.append(Password(website: "YouTube", password: "Qwerty"))
-        passwords.append(Password(website: "GitHub", password: "1234"))
-        passwords.append(Password(website: "SwiftBook", password: "12345678"))
+        accounts.append(Account(website: "VK", password: "abc123"))
+        accounts.append(Account(website: "YouTube", password: "Qwerty"))
+        accounts.append(Account(website: "GitHub", password: "1234"))
+        accounts.append(Account(website: "SwiftBook", password: "12345678"))
         
-        return passwords
+        return accounts
     }
 }

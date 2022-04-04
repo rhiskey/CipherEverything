@@ -10,14 +10,12 @@ import UIKit
 class EditPasswordViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - IBOutlets
-    @IBOutlet var loginLB: UILabel!
     @IBOutlet var checkPasswordLB: UILabel!
-    
     @IBOutlet var passwordTF: UITextField!
     @IBOutlet var editSwitch: UISwitch!
     
     // MARK: - Public Variables
-    var account: Password!
+    var account: Account!
     
     // MARK: - Private Variables
     private var passwordRegex = "^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$"

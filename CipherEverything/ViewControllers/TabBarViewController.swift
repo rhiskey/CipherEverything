@@ -9,9 +9,14 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
     
+    var accounts: [Account]!
+    var teamMembers: [TeamMember]!    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         title = "Accounts"
+        navigationItem.hidesBackButton = true
         setupViewControllers()
     }
 }
@@ -19,14 +24,11 @@ class TabBarViewController: UITabBarController {
 // MARK: - Private Methods
 extension TabBarViewController {
     private func setupViewControllers() {
-        let accounts = DataManager.shared.passwords
-        //let teamMembers = DataManager.shared.teamMembers
-        
         let passwordsVC = viewControllers?.first as! PasswordsTableViewController
-        //let teamVC = viewControllers?.last as! TeamTableViewController
+        let teamVC = viewControllers?.last as! TeamTableViewController
         
-        passwordsVC.passwords = accounts
-        //teamVC.teamMembers = teamMembers
+        passwordsVC.accounts = accounts
+        teamVC.developersList = teamMembers
     }
 }
 

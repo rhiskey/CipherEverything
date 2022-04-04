@@ -9,7 +9,7 @@ import UIKit
 
 class PasswordsTableViewController: UITableViewController {
     
-    var passwords: [Password]!
+    var accounts: [Account]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +18,7 @@ class PasswordsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        passwords.count
+        accounts.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,7 +29,7 @@ class PasswordsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "passwordCell", for: indexPath)
         var content = cell.defaultContentConfiguration()
         
-        let account = passwords[indexPath.section]
+        let account = accounts[indexPath.section]
         
         content.text = account.website
 //        content.secondaryText = 
@@ -42,7 +42,7 @@ class PasswordsTableViewController: UITableViewController {
     
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let account = passwords[indexPath.section]
+        let account = accounts[indexPath.section]
         performSegue(withIdentifier: "showEditPassword", sender: account)
     }
     
@@ -50,7 +50,7 @@ class PasswordsTableViewController: UITableViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let editPasswordVC = segue.destination as? EditPasswordViewController else { return }
-        editPasswordVC.account = sender as? Password
+        editPasswordVC.account = sender as? Account
     }
 
 }

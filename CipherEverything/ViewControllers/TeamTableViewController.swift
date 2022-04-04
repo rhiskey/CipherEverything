@@ -9,13 +9,14 @@ import UIKit
 
 class TeamTableViewController: UITableViewController {
 
+    var developersList: [TeamMember]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0

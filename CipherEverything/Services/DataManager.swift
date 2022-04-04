@@ -11,7 +11,7 @@ class DataManager {
     
     static let shared = DataManager()
     
-    let passwords = Password.getPasswords()
+    let accounts = Account.getAccounts()
     let teamMembers = TeamMember.getTeamMember()
     
     private init() {}
