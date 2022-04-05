@@ -13,14 +13,18 @@ class LoginViewController: UIViewController {
     
     let passwordForLogin = "123A!"
     
-    let accounts = DataManager.shared.accounts
-    let teamMembers = DataManager.shared.teamMembers
+    let dmInstance = DataManager.shared
+    
+    var accounts: [Account]!
+    var teamMembers: [TeamMember]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.leftBarButtonItem?.title = "Exit"
+        accounts = dmInstance.accounts
+        teamMembers = dmInstance.teamMembers
         
+        navigationItem.leftBarButtonItem?.title = "Exit"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
