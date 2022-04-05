@@ -1,5 +1,5 @@
 //
-//  EditPasswordViewController.swift
+//  EditAccountViewController.swift
 //  CipherEverything
 //
 //  Created by Владимир Киселев on 03.04.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EditPasswordViewController: UIViewController, UITextFieldDelegate {
+class EditAccountViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - IBOutlets
     @IBOutlet var checkPasswordLB: UILabel!
@@ -26,7 +26,6 @@ class EditPasswordViewController: UIViewController, UITextFieldDelegate {
         passwordTF.delegate = self
         
         title = account.website
-//        loginLB.text = "Login: \(account.login)"
         passwordTF.text = account.password
         
         passwordRegularExpressionCheck(for: account.password)
@@ -43,7 +42,6 @@ class EditPasswordViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func checkPassword(_ sender: UITextField) {
         guard let text = sender.text else { return }
-    
         passwordRegularExpressionCheck(for: text)
     }
     
@@ -58,7 +56,7 @@ class EditPasswordViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
-extension EditPasswordViewController {
+extension EditAccountViewController {
     // MARK: - Public Methods
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField == passwordTF && !editSwitch.isOn {

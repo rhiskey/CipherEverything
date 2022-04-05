@@ -24,10 +24,10 @@ class TabBarViewController: UITabBarController {
 // MARK: - Private Methods
 extension TabBarViewController {
     private func setupViewControllers() {
-        let passwordsVC = viewControllers?.first as! PasswordsTableViewController
+        let accountsVC = viewControllers?.first as! AccountsTableViewController
         let teamVC = viewControllers?.last as! TeamTableViewController
         
-        passwordsVC.accounts = accounts
+        accountsVC.accounts = accounts
         teamVC.developersList = teamMembers
     }
 }

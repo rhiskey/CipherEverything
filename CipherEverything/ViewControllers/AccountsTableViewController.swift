@@ -1,5 +1,5 @@
 //
-//  PasswordsTableViewController.swift
+//  AccountsTableViewController.swift
 //  CipherEverything
 //
 //  Created by Владимир Киселев on 03.04.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PasswordsTableViewController: UITableViewController {
+class AccountsTableViewController: UITableViewController {
     
     var accounts: [Account]!
     
@@ -49,8 +49,8 @@ class PasswordsTableViewController: UITableViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let editPasswordVC = segue.destination as? EditPasswordViewController else { return }
-        editPasswordVC.account = sender as? Account
+        guard let editAccountVC = segue.destination as? EditAccountViewController else { return }
+        editAccountVC.account = sender as? Account
     }
 
 }
