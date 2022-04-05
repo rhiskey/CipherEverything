@@ -48,16 +48,6 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate {
         guard let text = sender.text else { return }
         passwordRegularExpressionCheck(for: text)
     }
-    
-    func passwordRegularExpressionCheck(for text: String) {
-        if text.count > 8 {
-            checkPasswordLB.text = "Strong password!"
-            checkPasswordLB.textColor = .systemGreen
-        } else {
-            checkPasswordLB.text = "Weak password!"
-            checkPasswordLB.textColor = .systemRed
-        }
-    }
 }
 
 extension EditAccountViewController {
@@ -67,5 +57,15 @@ extension EditAccountViewController {
             return false;
         }
         return true
+    }
+    
+    func passwordRegularExpressionCheck(for text: String) {
+        if text.count > 8 {
+            checkPasswordLB.text = "Strong password!"
+            checkPasswordLB.textColor = .systemGreen
+        } else {
+            checkPasswordLB.text = "Weak password!"
+            checkPasswordLB.textColor = .systemRed
+        }
     }
 }
