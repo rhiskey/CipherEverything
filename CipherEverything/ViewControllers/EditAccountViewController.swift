@@ -27,6 +27,8 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate {
         
         title = account.website
         passwordTF.text = account.password
+
+        editSwitch.setOn(false, animated: false)
         
         passwordRegularExpressionCheck(for: account.password)
     }
@@ -35,8 +37,10 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate {
     @IBAction func editSwitched(_ sender: UISwitch) {
         if sender.isOn {
             passwordTF.isUserInteractionEnabled = true
+            passwordTF.isSecureTextEntry = false
         } else {
             passwordTF.isUserInteractionEnabled = false
+            passwordTF.isSecureTextEntry = true
         }
     }
     
