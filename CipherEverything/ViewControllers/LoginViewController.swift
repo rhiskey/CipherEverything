@@ -15,8 +15,8 @@ class LoginViewController: UIViewController {
     
     let dmInstance = DataManager.shared
     
-    var accounts: [Account]!
-    var teamMembers: [TeamMember]!
+    var accounts: [Account]?
+    var teamMembers: [TeamMember]?
     
     override func viewDidLoad() {
         super.viewDidLoad()

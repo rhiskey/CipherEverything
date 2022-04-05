@@ -15,19 +15,19 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var editSwitch: UISwitch!
     
     // MARK: - Public Variables
-    var account: Account!
+    var account: Account?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         passwordTF.delegate = self
         
-        title = account.website
-        passwordTF.text = account.password
+        title = account?.website
+        passwordTF.text = account?.password
 
         editSwitch.setOn(false, animated: false)
         
-        passwordRegularExpressionCheck(for: account.password)
+        passwordRegularExpressionCheck(for: account?.password ?? "")
     }
     
     override func viewDidDisappear(_ animated: Bool) {

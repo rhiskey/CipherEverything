@@ -9,7 +9,7 @@ import UIKit
 
 class AccountsTableViewController: UITableViewController {
     
-    var accounts: [Account]!
+    var accounts: [Account]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +18,7 @@ class AccountsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        accounts.count
+        accounts?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,9 +29,9 @@ class AccountsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "passwordCell", for: indexPath)
         var content = cell.defaultContentConfiguration()
         
-        let account = accounts[indexPath.section]
+        let account = accounts?[indexPath.section]
         
-        content.text = account.website
+        content.text = account?.website
         content.image = UIImage(systemName: "key")
         
         cell.contentConfiguration = content
@@ -41,7 +41,7 @@ class AccountsTableViewController: UITableViewController {
     
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let account = accounts[indexPath.section]
+        let account = accounts?[indexPath.section]
         performSegue(withIdentifier: "showEditPassword", sender: account)
     }
     

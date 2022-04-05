@@ -9,8 +9,8 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
     
-    var accounts: [Account]!
-    var teamMembers: [TeamMember]!    
+    var accounts: [Account]?
+    var teamMembers: [TeamMember]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
