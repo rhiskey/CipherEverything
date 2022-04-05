@@ -17,9 +17,6 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Public Variables
     var account: Account!
     
-    // MARK: - Private Variables
-    private var passwordRegex = "^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,9 +45,10 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate {
         guard let text = sender.text else { return }
         passwordRegularExpressionCheck(for: text)
     }
+    
 }
 
-// MARK: - Public Methods
+// MARK: - Public UI Methods
 extension EditAccountViewController {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField == passwordTF && !editSwitch.isOn {
@@ -58,14 +56,44 @@ extension EditAccountViewController {
         }
         return true
     }
-    
+}
+
+// MARK: - Password Checker
+extension EditAccountViewController {
     func passwordRegularExpressionCheck(for text: String) {
-        if text.count > 8 {
+        if (isValidPassword(text)) {
             checkPasswordLB.text = "Strong password!"
             checkPasswordLB.textColor = .systemGreen
         } else {
             checkPasswordLB.text = "Weak password!"
             checkPasswordLB.textColor = .systemRed
         }
+    }
+    
+    func isValidPassword(_ password: String) -> Bool {
+        // least one uppercase,
+        // least one digit
+        // least one lowercase
+        // least one symbol
+        // min 8 characters total
+        let password = password.trimmingCharacters(in: CharacterSet.whitespaces)
+        let passwordRegex = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&<>*~:`-]).{8,}$"
+        return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: password)
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension EditAccountViewController: UITextViewDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super .touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        navigationController?.popViewController(animated: true)
+        
+        dismiss(animated: true, completion: nil)
+        return true
+
     }
 }
