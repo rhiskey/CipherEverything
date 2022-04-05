@@ -32,7 +32,6 @@ class AccountsTableViewController: UITableViewController {
         let account = accounts[indexPath.section]
         
         content.text = account.website
-//        content.secondaryText = 
         content.image = UIImage(systemName: "key")
         
         cell.contentConfiguration = content

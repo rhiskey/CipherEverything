@@ -30,6 +30,11 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate {
         passwordRegularExpressionCheck(for: account.password)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        passwordTF.text = ""
+        super.viewDidDisappear(animated)
+    }
+    
     // MARK: - IBActions
     @IBAction func editSwitched(_ sender: UISwitch) {
         if sender.isOn {
