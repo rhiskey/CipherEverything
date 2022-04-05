@@ -1,7 +1,7 @@
 #  CipherEverything
 
-![Pull requests](https://img.shields.io/badge/github/issues-pr/rhiskey/CipherEverything)
-![Platform](https://img.shields.io/badge/cocoapods/p/ios)
+![Pull requests](https://img.shields.io/badge/github/issues-pr/:rhiskey/:CipherEverything)
+![Platform](https://img.shields.io/badge/cocoapods/p/:ios)
 
 Password manager
 
