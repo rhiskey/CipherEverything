@@ -50,8 +50,8 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
+// MARK: - Public Methods
 extension EditAccountViewController {
-    // MARK: - Public Methods
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField == passwordTF && !editSwitch.isOn {
             return false;
