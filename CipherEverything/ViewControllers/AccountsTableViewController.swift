@@ -15,6 +15,11 @@ class AccountsTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.rowHeight = 80
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.navigationItem.title = "Accounts"
+    }
 
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
