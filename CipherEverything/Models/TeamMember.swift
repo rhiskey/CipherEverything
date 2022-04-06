@@ -35,7 +35,7 @@ struct TeamMember {
         
         teamMembers.append(TeamMember(name: "Sergey",
                                       surname: "Veretennikov",
-                                      description: "IOS Developer?",
+                                      description: "IOS Developer",
                                       photo: "Sergey"))
         
         return teamMembers

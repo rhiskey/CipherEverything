@@ -34,7 +34,7 @@ class AccountsTableViewController: UITableViewController {
         content.text = account?.website
         content.image = UIImage(systemName: "key")
         
-        cell.contentaConfiguration = content
+        cell.contentConfiguration = content
         
         return cell
     }
