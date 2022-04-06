@@ -29,8 +29,8 @@ struct TeamMember {
                                       photo: "Eugeni"))
         
         teamMembers.append(TeamMember(name: "Vladimir",
-                                      surname: "Заполни сам",
-                                      description: "Заполни сам",
+                                      surname: "Kiselev",
+                                      description: "IOS Developer",
                                       photo: "Vladimir"))
         
         teamMembers.append(TeamMember(name: "Sergey",
