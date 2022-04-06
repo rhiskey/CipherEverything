@@ -13,8 +13,7 @@ struct TeamMember {
     let name: String
     let surname: String
     let description: String
-    // I need your image to next step
-    let photo: UIImage? = UIImage(systemName: "phone")
+    let photo: String
     
     var fullname: String {
         "\(surname) \(name)"
@@ -26,15 +25,18 @@ struct TeamMember {
         
         teamMembers.append(TeamMember(name: "Evgeniy",
                                       surname: "Voloshenko",
-                                      description: "IOS Developer"))
+                                      description: "IOS Developer",
+                                      photo: "Eugeni"))
         
         teamMembers.append(TeamMember(name: "Vladimir",
-                                      surname: "Заполни сам",
-                                      description: "Заполни сам"))
+                                      surname: "Kiselev",
+                                      description: "IOS Developer",
+                                      photo: "Vladimir"))
         
         teamMembers.append(TeamMember(name: "Sergey",
-                                      surname: "Заполни сам",
-                                      description: "Заполни сам"))
+                                      surname: "Veretennikov",
+                                      description: "IOS Developer?",
+                                      photo: "Sergey"))
         
         return teamMembers
     }
