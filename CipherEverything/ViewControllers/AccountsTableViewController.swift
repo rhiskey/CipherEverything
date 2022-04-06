@@ -8,8 +8,7 @@
 import UIKit
 
 class AccountsTableViewController: UITableViewController {
-    
-    
+
     var accounts: [Account]?
     
     override func viewDidLoad() {
