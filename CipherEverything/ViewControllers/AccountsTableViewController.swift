@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol AddNewAccountViewControllerDelegate {
+    func updateTable(with account: Account)
+}
+
 class AccountsTableViewController: UITableViewController {
     
     var accounts: [Account]?
@@ -45,8 +49,24 @@ class AccountsTableViewController: UITableViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let editAccountVC = segue.destination as? EditAccountViewController else { return }
+        guard let addAccountVC = segue.destination as? AddNewAccountViewController else { return }
         editAccountVC.account = sender as? Account
+        
+        // TODO: Doesn't pass!!
+        addAccountVC.delegate = self
     }
     
 }
 
+// MARK: - Add new account to table
+extension AccountsTableViewController: AddNewAccountViewControllerDelegate {
+    func updateTable(with account: Account) {
+        self.accounts?.append(account)
+        
+        self.tableView.performBatchUpdates({
+            self.tableView.insertRows(at: [IndexPath(row: (self.accounts?.count ?? 0) - 1,
+                                                     section: 0)],
+                                      with: .automatic)
+        }, completion: nil)
+    }
+}

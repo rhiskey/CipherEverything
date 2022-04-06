@@ -12,14 +12,24 @@ class AddNewAccountViewController: UIViewController {
     @IBOutlet weak var websiteTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    var delegate: AccountsTableViewController!
+    
     @IBAction func addPressed(_ sender: Any) {
         guard websiteTextField.text != "" else { return }
         guard let website = websiteTextField.text,
               let password = passwordTextField.text else { return }
         
-        DataManager.shared.addNew(account: Account(website: website,
-                                                   password: password))
+        let newAccount = Account(website: website,
+                                       password: password)
+        
+        DataManager.shared.addNew(account: newAccount)
+        
+        delegate.updateTable(with: newAccount)
+        
         // проверка на кол-во аккаунтов в массиве
         print(DataManager.shared.accounts.count)
+        
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
 }
