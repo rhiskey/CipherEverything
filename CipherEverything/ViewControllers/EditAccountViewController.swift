@@ -96,13 +96,9 @@ extension EditAccountViewController: UITextViewDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         navigationController?.popViewController(animated: true)
-        
         dismiss(animated: true, completion: nil)
         return true
         
     }
     
-//    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-//
-//    }
 }

@@ -56,7 +56,7 @@
                     <navigationItem key="navigationItem" title="Accounts" id="hg2-sv-Uh1">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="TAi-UQ-YQ9">
                             <connections>
-                                <segue destination="v53-3H-lRT" kind="show" id="bPW-Q7-XoU"/>
+                                <segue destination="v53-3H-lRT" kind="show" identifier="showAddPasword" id="bPW-Q7-XoU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
