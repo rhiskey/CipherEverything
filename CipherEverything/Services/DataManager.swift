@@ -11,8 +11,12 @@ class DataManager {
     
     static let shared = DataManager()
     
-    let accounts = Account.getAccounts()
+    var accounts = Account.getAccounts()
     let teamMembers = TeamMember.getTeamMember()
+    
+    func addNew(account: Account) {
+        accounts.append(account)
+    }
     
     private init() {}
 }

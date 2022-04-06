@@ -23,12 +23,19 @@ class TabBarViewController: UITabBarController {
 
 // MARK: - Private Methods
 extension TabBarViewController {
+
     private func setupViewControllers() {
-        let accountsVC = viewControllers?.first as! AccountsTableViewController
-        let teamVC = viewControllers?.last as! TeamTableViewController
+        guard let tabBarChildViewControllers = viewControllers else { return }
         
-        accountsVC.accounts = accounts
-        teamVC.developersList = teamMembers
+        for viewController in tabBarChildViewControllers {
+            guard let navigationVC = viewController as? UINavigationController else { return }
+            
+            if let accountsVC = navigationVC.topViewController as? AccountsTableViewController {
+                accountsVC.accounts = accounts
+            } else if let teamVC = navigationVC.topViewController as? TeamTableViewController {
+                teamVC.developersList = teamMembers
+            }
+        }
     }
 }
 

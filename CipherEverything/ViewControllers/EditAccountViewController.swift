@@ -14,7 +14,7 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var passwordTF: UITextField!
     @IBOutlet var editSwitch: UISwitch!
     
-    // MARK: - Public Variables
+    // MARK: - Public Properties
     var account: Account?
     
     override func viewDidLoad() {
@@ -101,4 +101,8 @@ extension EditAccountViewController: UITextViewDelegate {
         return true
         
     }
+    
+//    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+//
+//    }
 }
