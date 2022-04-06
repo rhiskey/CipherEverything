@@ -11,7 +11,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet var passwordTF: UITextField!
     
-    let passwordForLogin = "123A!"
+    let passwordForLogin = ""
     
     
     let dmInstance = DataManager.shared
