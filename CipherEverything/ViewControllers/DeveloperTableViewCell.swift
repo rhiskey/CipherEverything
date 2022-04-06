@@ -18,7 +18,7 @@ class DeveloperTableViewCell: UITableViewCell {
     func forceChanges(teamMember: TeamMember) {
         
         let size = CGSize(width: 84, height: 84)
-        let image = UIImage(named: teamMember.photo)
+        let image = teamMember.photo
         let resizedImage = image?.preparingThumbnail(of: size)
         
         self.developerName.text = teamMember.name
