@@ -15,24 +15,22 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var editSwitch: UISwitch!
     
     // MARK: - Public Variables
-    var account: Account?
+    var account: Account!
+    
+    // MARK: - Private Variables
+    private var passwordRegex = "^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         passwordTF.delegate = self
         
-        title = account?.website
-        passwordTF.text = account?.password
+        title = account.website
+        passwordTF.text = account.password
 
         editSwitch.setOn(false, animated: false)
         
-        passwordRegularExpressionCheck(for: account?.password ?? "")
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        passwordTF.text = ""
-        super.viewDidDisappear(animated)
+        passwordRegularExpressionCheck(for: account.password)
     }
     
     // MARK: - IBActions
@@ -51,22 +49,8 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate {
         passwordRegularExpressionCheck(for: text)
     }
     
-}
-
-// MARK: - Public UI Methods
-extension EditAccountViewController {
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        if textField == passwordTF && !editSwitch.isOn {
-            return false;
-        }
-        return true
-    }
-}
-
-// MARK: - Password Checker
-extension EditAccountViewController {
     func passwordRegularExpressionCheck(for text: String) {
-        if (isValidPassword(text)) {
+        if text.count > 8 {
             checkPasswordLB.text = "Strong password!"
             checkPasswordLB.textColor = .systemGreen
         } else {
@@ -74,31 +58,14 @@ extension EditAccountViewController {
             checkPasswordLB.textColor = .systemRed
         }
     }
-    
-    func isValidPassword(_ password: String) -> Bool {
-        // least one uppercase,
-        // least one digit
-        // least one lowercase
-        // least one symbol
-        // min 8 characters total
-        let password = password.trimmingCharacters(in: CharacterSet.whitespaces)
-        let passwordRegex = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&<>*~:`-]).{8,}$"
-        return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: password)
-    }
 }
 
-// MARK: - UITextFieldDelegate
-extension EditAccountViewController: UITextViewDelegate {
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super .touchesBegan(touches, with: event)
-        view.endEditing(true)
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        navigationController?.popViewController(animated: true)
-        
-        dismiss(animated: true, completion: nil)
+extension EditAccountViewController {
+    // MARK: - Public Methods
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == passwordTF && !editSwitch.isOn {
+            return false;
+        }
         return true
-
     }
 }
