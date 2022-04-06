@@ -8,7 +8,7 @@
 import UIKit
 
 class AccountsTableViewController: UITableViewController {
-
+    
     var accounts: [Account]?
     
     override func viewDidLoad() {
@@ -16,38 +16,32 @@ class AccountsTableViewController: UITableViewController {
         tableView.rowHeight = 80
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tabBarController?.navigationItem.title = "Accounts"
-    }
-
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        accounts.count
+        accounts?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "passwordCell", for: indexPath)
         var content = cell.defaultContentConfiguration()
         
-        let account = accounts[indexPath.section]
+        let account = accounts?[indexPath.section]
         
-        content.text = account.website
-//        content.secondaryText = 
+        content.text = account?.website
         content.image = UIImage(systemName: "key")
         
-        cell.contentConfiguration = content
+        cell.contentaConfiguration = content
         
         return cell
     }
     
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let account = accounts[indexPath.section]
+        let account = accounts?[indexPath.section]
         performSegue(withIdentifier: "showEditPassword", sender: account)
     }
     
@@ -57,6 +51,6 @@ class AccountsTableViewController: UITableViewController {
         guard let editAccountVC = segue.destination as? EditAccountViewController else { return }
         editAccountVC.account = sender as? Account
     }
-
+    
 }
 
