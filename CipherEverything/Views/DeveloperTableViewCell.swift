@@ -31,6 +31,7 @@ class DeveloperTableViewCell: UITableViewCell {
         let borderColor = UIColor(red:0, green:0, blue:0, alpha:1.0)
         self.developerImage.layer.borderColor = borderColor.cgColor
         self.developerImage.layer.borderWidth = 3.0
+        //Классно про обводку придумали. Я не додумался дурак)
         
         self.developerImage.contentMode = .scaleAspectFill
         

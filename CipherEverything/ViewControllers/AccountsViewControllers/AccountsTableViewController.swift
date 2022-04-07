@@ -31,7 +31,9 @@ class AccountsTableViewController: UITableViewController {
         DataManager.shared.accounts.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView,
+                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "passwordCell", for: indexPath)
         var content = cell.defaultContentConfiguration()
         
@@ -43,20 +45,22 @@ class AccountsTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
-    {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    
+    override func tableView(_ tableView: UITableView,
+                            commit editingStyle: UITableViewCell.EditingStyle,
+                            forRowAt indexPath: IndexPath) {
+        
         if editingStyle == .delete {
-
+            
             showAlert(
                 title: "Warning!",
                 message: "Do you really want to delete account?",
                 account: DataManager.shared.accounts[indexPath.row]
             )
-
+            
         }
     }
     
@@ -65,7 +69,7 @@ class AccountsTableViewController: UITableViewController {
         if let addAccountVC = segue.destination as? AddNewAccountViewController {
             addAccountVC.delegate = self
         }
-            
+        
         guard let editAccountVC = segue.destination as? EditAccountViewController,
               let indexPath = tableView.indexPathForSelectedRow else { return }
         editAccountVC.account = DataManager.shared.accounts[indexPath.row]
