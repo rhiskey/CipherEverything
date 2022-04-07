@@ -94,6 +94,12 @@ extension EditAccountViewController: UITextViewDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Save
+        let newAccount = Account(website: account.website,
+                                 password: passwordTF.text ?? "")
+        
+        DataManager.shared.updateAccount(for: newAccount)
+        
         navigationController?.popViewController(animated: true)
         return true
     }
