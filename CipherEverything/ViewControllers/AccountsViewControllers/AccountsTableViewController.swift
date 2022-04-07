@@ -13,6 +13,8 @@ protocol AddNewAccountViewControllerDelegate {
 
 class AccountsTableViewController: UITableViewController {
     
+    let sharedData = DataManager.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 80
@@ -28,7 +30,7 @@ class AccountsTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        DataManager.shared.accounts.count
+        sharedData.accounts.count
     }
     
     override func tableView(_ tableView: UITableView,
@@ -37,7 +39,7 @@ class AccountsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "passwordCell", for: indexPath)
         var content = cell.defaultContentConfiguration()
         
-        content.text = DataManager.shared.accounts[indexPath.row].website
+        content.text = sharedData.accounts[indexPath.row].website
         content.image = UIImage(systemName: "key")
         
         cell.contentConfiguration = content
@@ -58,7 +60,7 @@ class AccountsTableViewController: UITableViewController {
             showAlert(
                 title: "Warning!",
                 message: "Do you really want to delete account?",
-                account: DataManager.shared.accounts[indexPath.row]
+                account: sharedData.accounts[indexPath.row]
             )
             
         }
@@ -83,7 +85,7 @@ extension AccountsTableViewController {
     private func showAlert(title: String, message massage: String, account: Account) {
         let alert = UIAlertController(title: title, message: massage, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
-            DataManager.shared.delete(of: account)
+            self.sharedData.delete(of: account)
             self.tableView.reloadData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
