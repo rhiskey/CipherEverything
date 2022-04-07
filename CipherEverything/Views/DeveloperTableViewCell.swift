@@ -27,6 +27,8 @@ class DeveloperTableViewCell: UITableViewCell {
         
         self.developerImage.image = resizedImage
         self.developerImage.layer.cornerRadius = self.developerImage.frame.height / 2
+        self.developerImage.layer.masksToBounds = true
+        self.developerImage.layer.borderWidth = 0.5
         self.developerImage.contentMode = .scaleToFill
     }
     

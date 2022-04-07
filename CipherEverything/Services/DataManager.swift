@@ -18,5 +18,18 @@ class DataManager {
         accounts.append(account)
     }
     
+    func updateAccount(for account: Account) {
+        var newAccounts: [Account] = []
+        
+        for var acc in accounts {
+            if acc.website == account.website {
+                acc.password = account.password
+            
+            }
+            newAccounts.append(acc)
+        }
+        accounts = newAccounts
+    }
+    
     private init() {}
 }
