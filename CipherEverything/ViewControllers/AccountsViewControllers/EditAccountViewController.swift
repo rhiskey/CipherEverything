@@ -56,6 +56,12 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate, Password
         let newAccount = Account(website: account.website,
                                  password: passwordTF.text ?? "")
         
+        if let pass = passwordTF.text {
+            if pass.count < 8 {
+                lowPassAlert()
+            }
+        }
+        
         DataManager.shared.update(of: newAccount)
         
         navigationController?.popViewController(animated: true)
@@ -108,4 +114,21 @@ extension EditAccountViewController: UITextViewDelegate {
         view.endEditing(true)
         return true
     }
+}
+
+extension EditAccountViewController {
+    
+    private func lowPassAlert() {
+        let alert = UIAlertController(title: "Your password less than 8 symbols",
+                                      message: "Enter harder password",
+                                      preferredStyle: .alert)
+        
+        present(alert, animated: true, completion: nil)
+        
+        let alertAction = UIAlertAction(title: "Enter password",
+                                        style: .default)
+        alert.addAction(alertAction)
+        
+    }
+    
 }

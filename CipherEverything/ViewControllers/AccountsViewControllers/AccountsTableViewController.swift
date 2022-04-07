@@ -17,7 +17,7 @@ class AccountsTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.rowHeight = 80
         
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
         
     }
     
