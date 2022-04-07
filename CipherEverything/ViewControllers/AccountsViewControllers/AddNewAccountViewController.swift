@@ -24,12 +24,6 @@ class AddNewAccountViewController: UIViewController {
         
         DataManager.shared.addNew(account: newAccount)
         
-        delegate.updateTable(with: newAccount)
-        
-        // проверка на кол-во аккаунтов в массиве
-        print(DataManager.shared.accounts.count)
-        
         navigationController?.popViewController(animated: true)
-        dismiss(animated: true, completion: nil)
     }
 }
