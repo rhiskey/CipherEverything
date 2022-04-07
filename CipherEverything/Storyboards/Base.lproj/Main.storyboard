@@ -192,8 +192,8 @@
                                     <constraint firstItem="3nj-iq-aQE" firstAttribute="width" secondItem="tWN-m7-GuQ" secondAttribute="width" multiplier="0.3" id="iTX-Sj-kwT"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQ0-L4-jyc">
-                                <rect key="frame" x="75" y="282.5" width="170" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQ0-L4-jyc">
+                                <rect key="frame" x="75" y="264.5" width="170" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="M6R-qk-A7b"/>
                                 </constraints>
@@ -203,8 +203,8 @@
                                     <action selector="addPressed:" destination="v53-3H-lRT" eventType="touchUpInside" id="Qfy-Kx-tcV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9r-yN-xD0">
-                                <rect key="frame" x="118" y="331" width="185.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9r-yN-xD0">
+                                <rect key="frame" x="118.5" y="228" width="185.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -213,10 +213,12 @@
                         <viewLayoutGuide key="safeArea" id="e63-iW-JGs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="zQ0-L4-jyc" firstAttribute="top" secondItem="v9r-yN-xD0" secondAttribute="bottom" constant="16" id="AGV-48-h1k"/>
                             <constraint firstItem="e63-iW-JGs" firstAttribute="trailing" secondItem="tWN-m7-GuQ" secondAttribute="trailing" constant="16" id="OXg-lg-5Ui"/>
                             <constraint firstItem="e63-iW-JGs" firstAttribute="trailing" secondItem="v9r-yN-xD0" secondAttribute="trailing" constant="16" id="loj-bm-kE1"/>
                             <constraint firstItem="tWN-m7-GuQ" firstAttribute="leading" secondItem="e63-iW-JGs" secondAttribute="leading" constant="16" id="ntF-H1-iFJ"/>
                             <constraint firstItem="tWN-m7-GuQ" firstAttribute="top" secondItem="e63-iW-JGs" secondAttribute="top" constant="32" id="r8J-0q-JfL"/>
+                            <constraint firstItem="v9r-yN-xD0" firstAttribute="top" secondItem="tWN-m7-GuQ" secondAttribute="bottom" constant="16" id="woJ-2e-c8T"/>
                             <constraint firstItem="v9r-yN-xD0" firstAttribute="leading" secondItem="6m2-10-eSz" secondAttribute="leading" id="x8t-mm-pM7"/>
                             <constraint firstItem="zQ0-L4-jyc" firstAttribute="centerX" secondItem="KJp-ca-zOr" secondAttribute="centerX" id="zKv-F6-DSf"/>
                         </constraints>
