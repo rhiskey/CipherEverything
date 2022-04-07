@@ -15,10 +15,6 @@ class TeamTableViewController: UITableViewController {
         tableView.isScrollEnabled = false
 
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
     
     // MARK: - Table view data source
 
