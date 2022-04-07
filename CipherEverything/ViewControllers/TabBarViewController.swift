@@ -7,13 +7,13 @@
 
 import UIKit
 
-class TabBarViewController: UITabBarController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        title = "Accounts"
-        navigationItem.hidesBackButton = true
-    }
-}
+//class TabBarViewController: UITabBarController {
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        
+//        navigationItem.hidesBackButton = false
+//        
+//    }
+//}
 
