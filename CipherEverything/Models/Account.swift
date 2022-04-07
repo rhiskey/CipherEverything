@@ -10,7 +10,7 @@ import Foundation
 struct Account {
     
     let website: String
-    let password: String
+    var password: String
     
     static func getAccounts() -> [Account] {
         
@@ -23,4 +23,5 @@ struct Account {
         
         return accounts
     }
+
 }
