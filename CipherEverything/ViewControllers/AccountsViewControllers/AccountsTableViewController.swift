@@ -48,6 +48,8 @@ class AccountsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let accountInCell = DataManager.shared.accounts[indexPath.row]
+//            show alert
+//            if ok -> do
             DataManager.shared.delete(of: accountInCell)
             self.tableView.reloadData()
         }
@@ -59,5 +61,17 @@ class AccountsTableViewController: UITableViewController {
         guard let editAccountVC = segue.destination as? EditAccountViewController,
               let indexPath = tableView.indexPathForSelectedRow else { return }
         editAccountVC.account = DataManager.shared.accounts[indexPath.row]
+    }
+}
+
+// MARK: - Alert
+extension AccountsTableViewController {
+    private func showAlert(title: String, message massage: String, textField: UITextField? = nil) {
+        let alert = UIAlertController(title: title, message: massage, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            textField?.text = ""
+        }
+        alert.addAction(okAction)
+        present(alert, animated: true)
     }
 }
