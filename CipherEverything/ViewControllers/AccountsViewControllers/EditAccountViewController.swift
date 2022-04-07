@@ -47,7 +47,7 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate, Password
         }
     }
     
-    @IBAction func checkPassword(_ sender: UITextField) {
+    @IBAction func passwordEditingChanged(_ sender: UITextField) {
         guard let text = sender.text else { return }
         passwordRegularExpressionCheck(for: text)
     }
