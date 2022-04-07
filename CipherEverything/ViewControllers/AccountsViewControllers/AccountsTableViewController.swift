@@ -50,12 +50,11 @@ class AccountsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let accountInCell = DataManager.shared.accounts[indexPath.row]
 
             showAlert(
                 title: "Warning!",
                 message: "Do you really want to delete account?",
-                account: accountInCell
+                account: DataManager.shared.accounts[indexPath.row]
             )
 
         }
