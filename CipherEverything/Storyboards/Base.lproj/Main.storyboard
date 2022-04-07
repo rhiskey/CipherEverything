@@ -409,15 +409,33 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cipher" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ft-yx-QIc">
+                                <rect key="frame" x="16" y="20" width="288" height="33.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password Manager" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEE-Tw-FRg">
+                                <rect key="frame" x="16" y="69.5" width="288" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UDW-EG-Arn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="SEE-Tw-FRg" firstAttribute="leading" secondItem="UDW-EG-Arn" secondAttribute="leading" constant="16" id="2Ib-aA-HDe"/>
+                            <constraint firstItem="UDW-EG-Arn" firstAttribute="trailing" secondItem="1ft-yx-QIc" secondAttribute="trailing" constant="16" id="AfZ-Xj-ont"/>
+                            <constraint firstItem="1ft-yx-QIc" firstAttribute="leading" secondItem="UDW-EG-Arn" secondAttribute="leading" constant="16" id="BwV-YX-W2a"/>
+                            <constraint firstItem="1ft-yx-QIc" firstAttribute="top" secondItem="UDW-EG-Arn" secondAttribute="top" constant="20" id="JHe-30-bWj"/>
                             <constraint firstItem="HzK-TW-kn9" firstAttribute="centerY" secondItem="P2c-w2-7kM" secondAttribute="centerY" id="LCf-ON-Rug">
                                 <variation key="heightClass=compact-widthClass=compact" constant="50"/>
                                 <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                             </constraint>
                             <constraint firstItem="HzK-TW-kn9" firstAttribute="leading" secondItem="UDW-EG-Arn" secondAttribute="leading" constant="32" id="N0o-LJ-fba"/>
+                            <constraint firstItem="UDW-EG-Arn" firstAttribute="trailing" secondItem="SEE-Tw-FRg" secondAttribute="trailing" constant="16" id="fCO-TD-Iy4"/>
+                            <constraint firstItem="SEE-Tw-FRg" firstAttribute="top" secondItem="1ft-yx-QIc" secondAttribute="bottom" constant="16" id="koN-3E-e0R"/>
                             <constraint firstItem="UDW-EG-Arn" firstAttribute="trailing" secondItem="HzK-TW-kn9" secondAttribute="trailing" constant="32" id="nxQ-bx-zF6"/>
                         </constraints>
                     </view>
@@ -456,7 +474,7 @@
                     <tabBarItem key="tabBarItem" title="Team" image="person.fill" catalog="system" id="5he-gZ-xty"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="iHw-aR-jJ0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="102"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

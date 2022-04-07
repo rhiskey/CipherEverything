@@ -6,7 +6,7 @@
 
 Password manager
 
-![Preview](https://media.giphy.com/media/k6eyfKXmMZteSJZOxI/giphy.gif)
+![Preview](https://media.giphy.com/media/yYG9byQxwH5xEQJRbo/giphy.gif)
 
 ---
 
