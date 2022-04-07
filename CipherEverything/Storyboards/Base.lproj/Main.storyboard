@@ -279,7 +279,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7Z-9h-fOB">
-                                <rect key="frame" x="75" y="229" width="170" height="31"/>
+                                <rect key="frame" x="75" y="165" width="170" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="vo8-Uc-Cdd"/>
                                 </constraints>
@@ -295,9 +295,8 @@
                         <constraints>
                             <constraint firstItem="TqD-0A-PZm" firstAttribute="trailing" secondItem="B9e-7v-cY7" secondAttribute="trailing" constant="16" id="7ru-AF-06S"/>
                             <constraint firstItem="v7Z-9h-fOB" firstAttribute="top" secondItem="B9e-7v-cY7" secondAttribute="bottom" constant="32" id="PXl-2p-4XI"/>
+                            <constraint firstItem="B9e-7v-cY7" firstAttribute="top" secondItem="TqD-0A-PZm" secondAttribute="top" constant="32" id="TMk-NL-ITp"/>
                             <constraint firstItem="v7Z-9h-fOB" firstAttribute="centerX" secondItem="OR8-aC-DmB" secondAttribute="centerX" id="fsW-Df-ES2"/>
-                            <constraint firstItem="B9e-7v-cY7" firstAttribute="top" secondItem="TqD-0A-PZm" secondAttribute="top" id="neh-DP-86N"/>
-
                             <constraint firstItem="B9e-7v-cY7" firstAttribute="leading" secondItem="TqD-0A-PZm" secondAttribute="leading" constant="16" id="q7c-HV-7vo"/>
                         </constraints>
                     </view>
