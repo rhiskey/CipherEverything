@@ -9,8 +9,6 @@ import UIKit
 
 class TeamTableViewController: UITableViewController {
     
-    var developersList: [TeamMember]!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,21 +24,19 @@ class TeamTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        developersList.count
+        DataManager.shared.teamMembers.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "developerCell", for: indexPath) as! DeveloperTableViewCell
-        
-        cell.forceChanges(teamMember: developersList[indexPath.row])
-        
+        guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: "developerCell", for: indexPath) as? DeveloperTableViewCell else {
+                return tableView.dequeueReusableCell(withIdentifier: "developerCell", for: indexPath) }
+        cell.forceChanges(teamMember: DataManager.shared.teamMembers[indexPath.row])
         return cell
-        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
 }

@@ -53,7 +53,6 @@ extension LoginViewController {
         let alertAction = UIAlertAction(title: "Close", style: .default)
         
         alert.addAction(alertAction)
-        
     }
     
     private func showAlertForLogin(with title: String, and text: String) {
@@ -67,7 +66,6 @@ extension LoginViewController {
         }
         
         alert.addAction(alertAction)
-        
     }
 }
 

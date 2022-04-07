@@ -50,7 +50,6 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate {
         guard let text = sender.text else { return }
         passwordRegularExpressionCheck(for: text)
     }
-    
 }
 
 // MARK: - Public UI Methods
@@ -97,7 +96,5 @@ extension EditAccountViewController: UITextViewDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         navigationController?.popViewController(animated: true)
         return true
-        
     }
-    
 }
