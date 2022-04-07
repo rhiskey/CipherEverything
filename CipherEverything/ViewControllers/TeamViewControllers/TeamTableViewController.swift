@@ -18,7 +18,6 @@ class TeamTableViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.navigationItem.title = "Team"
     }
     
     // MARK: - Table view data source
