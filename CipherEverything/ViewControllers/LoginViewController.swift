@@ -11,7 +11,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet var passwordTF: UITextField!
     
-    let passwordForLogin = ""
+    let passwordForLogin = "Password"
     
     override func viewDidLoad() {
         super.viewDidLoad()
