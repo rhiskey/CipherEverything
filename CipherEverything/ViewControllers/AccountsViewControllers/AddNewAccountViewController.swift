@@ -24,6 +24,9 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, Passwo
         
         passwordTextField.delegate = self
         passwordTextField.enablesReturnKeyAutomatically = true
+        
+        passwordTextField.isSecureTextEntry = true
+        
     }
     
     @IBAction func passwordEditingChanged(_ sender: UITextField) {
