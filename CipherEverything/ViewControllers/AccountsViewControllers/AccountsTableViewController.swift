@@ -8,7 +8,7 @@
 import UIKit
 
 protocol AddNewAccountViewControllerDelegate {
-    func updateTable(with account: Account)
+    func updateTable()
 }
 
 class AccountsTableViewController: UITableViewController {
@@ -60,10 +60,15 @@ class AccountsTableViewController: UITableViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if let addAccountVC = segue.destination as? AddNewAccountViewController {
+            addAccountVC.delegate = self
+        }
+            
         guard let editAccountVC = segue.destination as? EditAccountViewController,
               let indexPath = tableView.indexPathForSelectedRow else { return }
         editAccountVC.account = DataManager.shared.accounts[indexPath.row]
+        
+        
     }
 }
 
@@ -79,5 +84,11 @@ extension AccountsTableViewController {
         alert.addAction(cancelAction)
         alert.addAction(okAction)
         present(alert, animated: true)
+    }
+}
+
+extension AccountsTableViewController: AddNewAccountViewControllerDelegate {
+    func updateTable() {
+        tableView.reloadData()
     }
 }

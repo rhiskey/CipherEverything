@@ -26,6 +26,10 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, Passwo
         passwordTextField.enablesReturnKeyAutomatically = true
     }
     
+    @IBAction func passwordEditingChanged(_ sender: UITextField) {
+        passwordRegularExpressionCheck(for: passwordTextField.text ?? "")
+    }
+    
     @IBAction func addPressed(_ sender: Any) {
         guard websiteTextField.text != "" else { return }
         guard let website = websiteTextField.text,
@@ -35,8 +39,8 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, Passwo
                                  password: password)
         
         DataManager.shared.addNew(account: newAccount)
-        
-        navigationController?.popViewController(animated: true)
+        delegate.updateTable()
+        dismiss(animated: true)
     }
 }
 
@@ -81,4 +85,3 @@ extension AddNewAccountViewController: UITextViewDelegate {
         return true
     }
 }
-
