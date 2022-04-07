@@ -48,10 +48,13 @@ class AccountsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let accountInCell = DataManager.shared.accounts[indexPath.row]
-//            show alert
-//            if ok -> do
-            DataManager.shared.delete(of: accountInCell)
-            self.tableView.reloadData()
+
+            showAlert(
+                title: "Warning!",
+                message: "Do you really want to delete account?",
+                account: accountInCell
+            )
+
         }
     }
     
@@ -66,11 +69,14 @@ class AccountsTableViewController: UITableViewController {
 
 // MARK: - Alert
 extension AccountsTableViewController {
-    private func showAlert(title: String, message massage: String, textField: UITextField? = nil) {
+    private func showAlert(title: String, message massage: String, account: Account) {
         let alert = UIAlertController(title: title, message: massage, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            textField?.text = ""
+        let okAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
+            DataManager.shared.delete(of: account)
+            self.tableView.reloadData()
         }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addAction(cancelAction)
         alert.addAction(okAction)
         present(alert, animated: true)
     }
