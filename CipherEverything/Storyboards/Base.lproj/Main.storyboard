@@ -87,7 +87,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="eFm-mh-vGM">
                                             <rect key="frame" x="16" y="8" width="288" height="84"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4j3-aj-KKf">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4j3-aj-KKf">
                                                     <rect key="frame" x="0.0" y="0.0" width="84" height="84"/>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NIA-mx-Xho">
@@ -410,7 +410,7 @@
                     <tabBarItem key="tabBarItem" title="Accounts" image="wallet.pass.fill" catalog="system" id="aPI-2O-ESC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Sct-sz-GCe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="102"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

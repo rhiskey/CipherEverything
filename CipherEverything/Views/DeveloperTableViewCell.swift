@@ -27,9 +27,15 @@ class DeveloperTableViewCell: UITableViewCell {
         
         self.developerImage.image = resizedImage
         self.developerImage.layer.cornerRadius = self.developerImage.frame.height / 2
-        self.developerImage.layer.masksToBounds = true
-        self.developerImage.layer.borderWidth = 0.5
-        self.developerImage.contentMode = .scaleToFill
+
+        let borderColor = UIColor(red:0, green:0, blue:0, alpha:1.0)
+        self.developerImage.layer.borderColor = borderColor.cgColor
+        self.developerImage.layer.borderWidth = 3.0
+        
+        self.developerImage.contentMode = .scaleAspectFill
+        
     }
     
 }
+
+
