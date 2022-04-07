@@ -17,8 +17,13 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, Passwo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        websiteTextField.becomeFirstResponder()
+        
         passwordCheckLabel.text = ""
+        
         passwordTextField.delegate = self
+        passwordTextField.enablesReturnKeyAutomatically = true
     }
     
     @IBAction func addPressed(_ sender: Any) {
@@ -27,7 +32,7 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, Passwo
               let password = passwordTextField.text else { return }
         
         let newAccount = Account(website: website,
-                                       password: password)
+                                 password: password)
         
         DataManager.shared.addNew(account: newAccount)
         
@@ -46,7 +51,7 @@ extension AddNewAccountViewController {
             passwordCheckLabel.textColor = .systemRed
         }
     }
-
+    
     func isValidPassword(_ password: String) -> Bool {
         // least one uppercase,
         // least one digit
@@ -66,4 +71,14 @@ extension AddNewAccountViewController: UITextViewDelegate {
         view.endEditing(true)
         passwordRegularExpressionCheck(for: passwordTextField.text ?? "")
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == websiteTextField  {
+            passwordTextField.becomeFirstResponder()
+        } else {
+            addPressed(passwordTextField ?? "")
+        }
+        return true
+    }
 }
+
