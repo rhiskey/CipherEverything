@@ -15,19 +15,19 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var editSwitch: UISwitch!
     
     // MARK: - Public Properties
-    var account: Account?
+    var account: Account!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         passwordTF.delegate = self
         
-        title = account?.website
-        passwordTF.text = account?.password
+        title = account.website
+        passwordTF.text = account.password
         
         editSwitch.setOn(false, animated: false)
         
-        passwordRegularExpressionCheck(for: account?.password ?? "")
+        passwordRegularExpressionCheck(for: account.password)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -50,7 +50,6 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate {
         guard let text = sender.text else { return }
         passwordRegularExpressionCheck(for: text)
     }
-    
 }
 
 // MARK: - Public UI Methods
@@ -96,9 +95,6 @@ extension EditAccountViewController: UITextViewDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         navigationController?.popViewController(animated: true)
-        dismiss(animated: true, completion: nil)
         return true
-        
     }
-    
 }

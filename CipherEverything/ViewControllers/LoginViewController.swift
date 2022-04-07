@@ -13,26 +13,18 @@ class LoginViewController: UIViewController {
     
     let passwordForLogin = ""
     
-    
-    let dmInstance = DataManager.shared
-    
     var accounts: [Account]?
     var teamMembers: [TeamMember]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        accounts = dmInstance.accounts
-        teamMembers = dmInstance.teamMembers
+        accounts = DataManager.shared.accounts
+        teamMembers = DataManager.shared.teamMembers
         
         navigationItem.leftBarButtonItem?.title = "Exit"
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destination = segue.destination as? TabBarViewController else { return }
-        destination.accounts = accounts
-        destination.teamMembers = teamMembers
-    }
     
     @IBAction func logInPressed() {
         if passwordTF.text != passwordForLogin {
@@ -61,7 +53,6 @@ extension LoginViewController {
         let alertAction = UIAlertAction(title: "Close", style: .default)
         
         alert.addAction(alertAction)
-        
     }
     
     private func showAlertForLogin(with title: String, and text: String) {
@@ -75,7 +66,6 @@ extension LoginViewController {
         }
         
         alert.addAction(alertAction)
-        
     }
 }
 

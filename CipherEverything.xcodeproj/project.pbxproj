@@ -79,6 +79,7 @@
 				5BF1186427F89665004A55E7 /* Services */,
 				5BF1186327F8965E004A55E7 /* Models */,
 				5BF1185F27F89610004A55E7 /* App */,
+				A591AC0A27FE1FA0002894A2 /* Views */,
 				5BF1186027F89614004A55E7 /* ViewControllers */,
 				5BF1186127F8961D004A55E7 /* Storyboards */,
 				5BF1186227F89652004A55E7 /* Resources */,
@@ -99,13 +100,10 @@
 		5BF1186027F89614004A55E7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				146B585227FCA03200CE6B0B /* DeveloperTableViewCell.swift */,
 				5BF1184F27F89601004A55E7 /* LoginViewController.swift */,
 				5BF1186A27F896DB004A55E7 /* TabBarViewController.swift */,
-				5BBB893727F9FF6200E78E5C /* AccountsTableViewController.swift */,
-				5BBB893927F9FF6D00E78E5C /* TeamTableViewController.swift */,
-				5BBB893D27FA01CD00E78E5C /* EditAccountViewController.swift */,
-				A591AC0827FE0599002894A2 /* AddNewAccountViewController.swift */,
+				A591AC0B27FE1FE5002894A2 /* AccountsViewControllers */,
+				A591AC0C27FE1FFC002894A2 /* TeamViewControllers */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -142,6 +140,32 @@
 				5BF1186527F8966F004A55E7 /* DataManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		A591AC0A27FE1FA0002894A2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				146B585227FCA03200CE6B0B /* DeveloperTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A591AC0B27FE1FE5002894A2 /* AccountsViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5BBB893727F9FF6200E78E5C /* AccountsTableViewController.swift */,
+				5BBB893D27FA01CD00E78E5C /* EditAccountViewController.swift */,
+				A591AC0827FE0599002894A2 /* AddNewAccountViewController.swift */,
+			);
+			path = AccountsViewControllers;
+			sourceTree = "<group>";
+		};
+		A591AC0C27FE1FFC002894A2 /* TeamViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5BBB893927F9FF6D00E78E5C /* TeamTableViewController.swift */,
+			);
+			path = TeamViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
