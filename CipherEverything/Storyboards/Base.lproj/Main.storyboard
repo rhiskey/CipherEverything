@@ -184,6 +184,9 @@
                                                 <rect key="frame" x="0.0" y="50" width="185.5" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                                <connections>
+                                                    <action selector="passwordEditingChanged:" destination="v53-3H-lRT" eventType="editingChanged" id="Xoi-vc-flp"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -453,7 +456,7 @@
                     <tabBarItem key="tabBarItem" title="Team" image="person.fill" catalog="system" id="5he-gZ-xty"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="iHw-aR-jJ0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="102"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
