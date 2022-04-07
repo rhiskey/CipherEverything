@@ -41,6 +41,13 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, Passwo
         let newAccount = Account(website: website,
                                  password: password)
         
+        if let pass = passwordTextField.text {
+            if pass.count < 8 {
+                lowPassAlert()
+                return
+            }
+        }
+        
         DataManager.shared.addNew(account: newAccount)
         delegate.updateTable()
         dismiss(animated: true)

@@ -59,6 +59,7 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate, Password
         if let pass = passwordTF.text {
             if pass.count < 8 {
                 lowPassAlert()
+                return
             }
         }
         
@@ -116,9 +117,9 @@ extension EditAccountViewController: UITextViewDelegate {
     }
 }
 
-extension EditAccountViewController {
+extension UIViewController {
     
-    private func lowPassAlert() {
+    public func lowPassAlert() {
         let alert = UIAlertController(title: "Your password less than 8 symbols",
                                       message: "Enter harder password",
                                       preferredStyle: .alert)
