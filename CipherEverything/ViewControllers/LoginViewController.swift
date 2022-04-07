@@ -13,15 +13,8 @@ class LoginViewController: UIViewController {
     
     let passwordForLogin = ""
     
-    var accounts: [Account]?
-    var teamMembers: [TeamMember]?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        accounts = DataManager.shared.accounts
-        teamMembers = DataManager.shared.teamMembers
-        
         navigationItem.leftBarButtonItem?.title = "Exit"
     }
     

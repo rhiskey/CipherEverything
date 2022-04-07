@@ -12,7 +12,6 @@ class DataManager {
     static let shared = DataManager()
     
     var accounts = Account.getAccounts()
-    let teamMembers = TeamMember.getTeamMember()
     
     func addNew(account: Account) {
         accounts.append(account)

@@ -23,6 +23,7 @@
 		5BF1186827F89685004A55E7 /* TeamMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF1186727F89685004A55E7 /* TeamMember.swift */; };
 		5BF1186B27F896DB004A55E7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF1186A27F896DB004A55E7 /* TabBarViewController.swift */; };
 		A591AC0927FE0599002894A2 /* AddNewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A591AC0827FE0599002894A2 /* AddNewAccountViewController.swift */; };
+		A5F7341427FEE6E7005FFF6F /* TeamDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F7341327FEE6E7005FFF6F /* TeamDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		5BF1186A27F896DB004A55E7 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		5BF1186C27F898BE004A55E7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A591AC0827FE0599002894A2 /* AddNewAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewAccountViewController.swift; sourceTree = "<group>"; };
+		A5F7341327FEE6E7005FFF6F /* TeamDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				5BF1186527F8966F004A55E7 /* DataManager.swift */,
+				A5F7341327FEE6E7005FFF6F /* TeamDataManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				5BF1186627F8966F004A55E7 /* DataManager.swift in Sources */,
 				5BF1184C27F89601004A55E7 /* AppDelegate.swift in Sources */,
 				5BBB893827F9FF6200E78E5C /* AccountsTableViewController.swift in Sources */,
+				A5F7341427FEE6E7005FFF6F /* TeamDataManager.swift in Sources */,
 				5BF1186827F89685004A55E7 /* TeamMember.swift in Sources */,
 				5BF1186B27F896DB004A55E7 /* TabBarViewController.swift in Sources */,
 				5BBB893A27F9FF6D00E78E5C /* TeamTableViewController.swift in Sources */,

@@ -77,11 +77,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="eFm-mh-vGM">
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="eFm-mh-vGM">
                                             <rect key="frame" x="16" y="8" width="288" height="84"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4j3-aj-KKf">
-                                                    <rect key="frame" x="0.0" y="0.0" width="84" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="72" height="84"/>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NIA-mx-Xho">
                                                     <rect key="frame" x="88" y="0.0" width="200" height="84"/>
@@ -278,11 +278,24 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7Z-9h-fOB">
+                                <rect key="frame" x="75" y="229" width="170" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="vo8-Uc-Cdd"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save"/>
+                                <connections>
+                                    <action selector="safeButtonPressed:" destination="Rbl-hQ-WpV" eventType="touchUpInside" id="XPc-Jv-Kwz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TqD-0A-PZm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="TqD-0A-PZm" firstAttribute="trailing" secondItem="B9e-7v-cY7" secondAttribute="trailing" constant="16" id="7ru-AF-06S"/>
+                            <constraint firstItem="v7Z-9h-fOB" firstAttribute="top" secondItem="B9e-7v-cY7" secondAttribute="bottom" constant="32" id="PXl-2p-4XI"/>
+                            <constraint firstItem="v7Z-9h-fOB" firstAttribute="centerX" secondItem="OR8-aC-DmB" secondAttribute="centerX" id="fsW-Df-ES2"/>
                             <constraint firstItem="B9e-7v-cY7" firstAttribute="top" secondItem="TqD-0A-PZm" secondAttribute="top" id="neh-DP-86N"/>
                             <constraint firstItem="B9e-7v-cY7" firstAttribute="leading" secondItem="TqD-0A-PZm" secondAttribute="leading" constant="16" id="q7c-HV-7vo"/>
                         </constraints>
@@ -413,7 +426,7 @@
                     <tabBarItem key="tabBarItem" title="Accounts" image="wallet.pass.fill" catalog="system" id="aPI-2O-ESC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Sct-sz-GCe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="102"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -432,7 +445,7 @@
                     <tabBarItem key="tabBarItem" title="Team" image="person.fill" catalog="system" id="5he-gZ-xty"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="iHw-aR-jJ0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="102"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -51,6 +51,16 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate, Password
         guard let text = sender.text else { return }
         passwordRegularExpressionCheck(for: text)
     }
+    
+    @IBAction func safeButtonPressed(_ sender: Any) {
+        let newAccount = Account(website: account.website,
+                                 password: passwordTF.text ?? "")
+        
+        DataManager.shared.update(of: newAccount)
+        
+        navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 // MARK: - Public UI Methods
@@ -93,14 +103,9 @@ extension EditAccountViewController: UITextViewDelegate {
         super .touchesBegan(touches, with: event)
         view.endEditing(true)
     }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        let newAccount = Account(website: account.website,
-                                 password: passwordTF.text ?? "")
-        
-        DataManager.shared.update(of: newAccount)
-        
-        navigationController?.popViewController(animated: true)
+        view.endEditing(true)
         return true
     }
 }

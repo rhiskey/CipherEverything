@@ -24,7 +24,7 @@ class TeamTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        DataManager.shared.teamMembers.count
+        TeamDataManager.shared.teamMembers.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -32,7 +32,7 @@ class TeamTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: "developerCell", for: indexPath) as? DeveloperTableViewCell else {
                 return tableView.dequeueReusableCell(withIdentifier: "developerCell", for: indexPath) }
-        cell.forceChanges(teamMember: DataManager.shared.teamMembers[indexPath.row])
+        cell.forceChanges(teamMember: TeamDataManager.shared.teamMembers[indexPath.row])
         return cell
     }
     
