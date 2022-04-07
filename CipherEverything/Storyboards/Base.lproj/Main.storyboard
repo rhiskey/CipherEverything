@@ -40,7 +40,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Rbl-hQ-WpV" kind="show" id="xLs-kx-FUX"/>
+                                    <segue destination="Rbl-hQ-WpV" kind="presentation" id="xLs-kx-FUX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -52,7 +52,7 @@
                     <navigationItem key="navigationItem" title="Accounts" id="hg2-sv-Uh1">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="TAi-UQ-YQ9">
                             <connections>
-                                <segue destination="v53-3H-lRT" kind="show" identifier="showAddPasword" id="bPW-Q7-XoU"/>
+                                <segue destination="v53-3H-lRT" kind="presentation" identifier="showAddPasword" id="bPW-Q7-XoU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -149,11 +149,11 @@
             <objects>
                 <viewController id="v53-3H-lRT" customClass="AddNewAccountViewController" customModule="CipherEverything" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KJp-ca-zOr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tWN-m7-GuQ">
-                                <rect key="frame" x="16" y="128" width="288" height="84"/>
+                                <rect key="frame" x="16" y="32" width="288" height="84"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="3nj-iq-aQE">
                                         <rect key="frame" x="0.0" y="0.0" width="86.5" height="84"/>
@@ -193,7 +193,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQ0-L4-jyc">
-                                <rect key="frame" x="75" y="264.5" width="170" height="31"/>
+                                <rect key="frame" x="75" y="168.5" width="170" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="M6R-qk-A7b"/>
                                 </constraints>
@@ -204,7 +204,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9r-yN-xD0">
-                                <rect key="frame" x="118.5" y="228" width="185.5" height="20.5"/>
+                                <rect key="frame" x="118.5" y="132" width="185.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -239,11 +239,11 @@
             <objects>
                 <viewController id="Rbl-hQ-WpV" customClass="EditAccountViewController" customModule="CipherEverything" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OR8-aC-DmB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="B9e-7v-cY7">
-                                <rect key="frame" x="16" y="96" width="288" height="101"/>
+                                <rect key="frame" x="16" y="32" width="288" height="101"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGX-wg-fTX" userLabel="passwordLB">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="20.5"/>
@@ -283,7 +283,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="TqD-0A-PZm" firstAttribute="trailing" secondItem="B9e-7v-cY7" secondAttribute="trailing" constant="16" id="7ru-AF-06S"/>
-                            <constraint firstItem="B9e-7v-cY7" firstAttribute="top" secondItem="TqD-0A-PZm" secondAttribute="top" id="neh-DP-86N"/>
+                            <constraint firstItem="B9e-7v-cY7" firstAttribute="top" secondItem="TqD-0A-PZm" secondAttribute="top" constant="32" id="gAx-EE-0ZC"/>
                             <constraint firstItem="B9e-7v-cY7" firstAttribute="leading" secondItem="TqD-0A-PZm" secondAttribute="leading" constant="16" id="q7c-HV-7vo"/>
                         </constraints>
                     </view>
