@@ -35,8 +35,8 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, Passwo
                                  password: password)
         
         DataManager.shared.addNew(account: newAccount)
-        
-        navigationController?.popViewController(animated: true)
+        delegate.updateTable()
+        dismiss(animated: true)
     }
 }
 
@@ -81,4 +81,3 @@ extension AddNewAccountViewController: UITextViewDelegate {
         return true
     }
 }
-
