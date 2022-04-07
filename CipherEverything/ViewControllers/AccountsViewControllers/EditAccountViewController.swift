@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EditAccountViewController: UIViewController, UITextFieldDelegate {
+class EditAccountViewController: UIViewController, UITextFieldDelegate, PasswordCheckerProtocol {
     
     // MARK: - IBOutlets
     @IBOutlet var checkPasswordLB: UILabel!
@@ -38,6 +38,7 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate {
     // MARK: - IBActions
     @IBAction func editSwitched(_ sender: UISwitch) {
         if sender.isOn {
+            passwordTF.becomeFirstResponder()
             passwordTF.isUserInteractionEnabled = true
             passwordTF.isSecureTextEntry = false
         } else {
@@ -62,7 +63,7 @@ extension EditAccountViewController {
     }
 }
 
-// MARK: - Password Checker
+// MARK: - Public Metgods
 extension EditAccountViewController {
     func passwordRegularExpressionCheck(for text: String) {
         if (isValidPassword(text)) {
@@ -94,11 +95,10 @@ extension EditAccountViewController: UITextViewDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // Save
         let newAccount = Account(website: account.website,
                                  password: passwordTF.text ?? "")
         
-        DataManager.shared.updateAccount(for: newAccount)
+        DataManager.shared.update(of: newAccount)
         
         navigationController?.popViewController(animated: true)
         return true

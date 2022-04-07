@@ -18,17 +18,20 @@ class DataManager {
         accounts.append(account)
     }
     
-    func updateAccount(for account: Account) {
+    func update(of account: Account) {
         var newAccounts: [Account] = []
-        
+
         for var acc in accounts {
             if acc.website == account.website {
                 acc.password = account.password
-            
             }
             newAccounts.append(acc)
         }
         accounts = newAccounts
+    }
+    
+    func delete(of account: Account) {
+        accounts = accounts.filter { $0.website != account.website }
     }
     
     private init() {}

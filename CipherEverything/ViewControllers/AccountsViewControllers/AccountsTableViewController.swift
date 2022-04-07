@@ -40,6 +40,19 @@ class AccountsTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    {
+        return true
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let accountInCell = DataManager.shared.accounts[indexPath.row]
+            DataManager.shared.delete(of: accountInCell)
+            self.tableView.reloadData()
+        }
+    }
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

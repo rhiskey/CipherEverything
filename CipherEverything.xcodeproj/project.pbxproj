@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		146B585327FCA03200CE6B0B /* DeveloperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B585227FCA03200CE6B0B /* DeveloperTableViewCell.swift */; };
+		5B9999D227FED0BF000E268C /* PasswordCheckerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9999D127FED0BF000E268C /* PasswordCheckerProtocol.swift */; };
 		5BBB893827F9FF6200E78E5C /* AccountsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB893727F9FF6200E78E5C /* AccountsTableViewController.swift */; };
 		5BBB893A27F9FF6D00E78E5C /* TeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB893927F9FF6D00E78E5C /* TeamTableViewController.swift */; };
 		5BBB893C27F9FF9600E78E5C /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB893B27F9FF9600E78E5C /* Account.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		146B585227FCA03200CE6B0B /* DeveloperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperTableViewCell.swift; sourceTree = "<group>"; };
+		5B9999D127FED0BF000E268C /* PasswordCheckerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCheckerProtocol.swift; sourceTree = "<group>"; };
 		5BBB893727F9FF6200E78E5C /* AccountsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsTableViewController.swift; sourceTree = "<group>"; };
 		5BBB893927F9FF6D00E78E5C /* TeamTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewController.swift; sourceTree = "<group>"; };
 		5BBB893B27F9FF9600E78E5C /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -56,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B9999D027FED0AD000E268C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5B9999D127FED0BF000E268C /* PasswordCheckerProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		5BF1183F27F89601004A55E7 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +86,7 @@
 		5BF1184A27F89601004A55E7 /* CipherEverything */ = {
 			isa = PBXGroup;
 			children = (
+				5B9999D027FED0AD000E268C /* Protocols */,
 				5BF1186427F89665004A55E7 /* Services */,
 				5BF1186327F8965E004A55E7 /* Models */,
 				5BF1185F27F89610004A55E7 /* App */,
@@ -241,6 +252,7 @@
 			files = (
 				5BBB893C27F9FF9600E78E5C /* Account.swift in Sources */,
 				A591AC0927FE0599002894A2 /* AddNewAccountViewController.swift in Sources */,
+				5B9999D227FED0BF000E268C /* PasswordCheckerProtocol.swift in Sources */,
 				146B585327FCA03200CE6B0B /* DeveloperTableViewCell.swift in Sources */,
 				5BF1185027F89601004A55E7 /* LoginViewController.swift in Sources */,
 				5BF1186627F8966F004A55E7 /* DataManager.swift in Sources */,
