@@ -11,20 +11,14 @@ class DataManager {
     
     static let shared = DataManager()
     
-    private var accounts = Account.getAccounts()
     private var teamMembers = TeamMember.getTeamMember()
+    private var accounts = Person.getPerson().accounts
     
-    func getAccounts() -> [Account] {
-        accounts
-    }
+    func getAccounts() -> [Account] { accounts }
     
-    func getTeamMembers() -> [TeamMember] {
-        teamMembers
-    }
+    func getTeamMembers() -> [TeamMember] { teamMembers }
     
-    func addNew(account: Account) {
-        accounts.append(account)
-    }
+    func addNew(account: Account) { accounts.append(account) }
     
     func update(of account: Account) {
         var newAccounts: [Account] = []

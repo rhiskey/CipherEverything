@@ -9,22 +9,23 @@ import UIKit
 
 class TeamTableViewController: UITableViewController {
     
+    // MARK: - Public Properties
+    var dataManager: DataManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.isScrollEnabled = false
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.navigationItem.title = "Team"
+        tabBarController?.navigationItem.title = "Team"
     }
     
-    // MARK: - Table view data source
-
+    // MARK: - TableView Data Source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        TeamDataManager.shared.teamMembers.count
+        dataManager.getTeamMembers().count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -32,7 +33,7 @@ class TeamTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: "developerCell", for: indexPath) as? DeveloperTableViewCell else {
                 return tableView.dequeueReusableCell(withIdentifier: "developerCell", for: indexPath) }
-        cell.forceChanges(teamMember: TeamDataManager.shared.teamMembers[indexPath.row])
+        cell.forceChanges(teamMember: dataManager.getTeamMembers()[indexPath.row])
         return cell
     }
     

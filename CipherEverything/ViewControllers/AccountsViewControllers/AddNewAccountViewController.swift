@@ -9,11 +9,14 @@ import UIKit
 
 class AddNewAccountViewController: UIViewController, UITextFieldDelegate, PasswordCheckerProtocol {
     
+    // MARK: - IBOutlets
     @IBOutlet weak var websiteTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordCheckLabel: UILabel!
     
+    // MARK: - Public Properties
     var delegate: AccountsTableViewController!
+    var dataManager: DataManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +29,7 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, Passwo
         passwordTextField.enablesReturnKeyAutomatically = true
     }
     
+    // MARK: - IBActions
     @IBAction func passwordEditingChanged(_ sender: UITextField) {
         passwordRegularExpressionCheck(for: passwordTextField.text ?? "")
     }
@@ -38,13 +42,13 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, Passwo
         let newAccount = Account(website: website,
                                  password: password)
         
-        DataManager.shared.addNew(account: newAccount)
+        dataManager.addNew(account: newAccount)
         delegate.updateTable()
         dismiss(animated: true)
     }
 }
 
-// MARK: - Public Methods
+// MARK: - Password Checker
 extension AddNewAccountViewController {
     func passwordRegularExpressionCheck(for text: String) {
         if (isValidPassword(text)) {

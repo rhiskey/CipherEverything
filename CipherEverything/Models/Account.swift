@@ -13,15 +13,12 @@ struct Account {
     var password: String
     
     static func getAccounts() -> [Account] {
-        
-        var accounts: [Account] = []
-        
-        accounts.append(Account(website: "VK", password: "abc123"))
-        accounts.append(Account(website: "YouTube", password: "Qwerty"))
-        accounts.append(Account(website: "GitHub", password: "1234"))
-        accounts.append(Account(website: "SwiftBook", password: "12345678"))
-        
-        return accounts
+        [
+            Account(website: "VK", password: "abc123"),
+            Account(website: "YouTube", password: "Qwerty"),
+            Account(website: "GitHub", password: "1234"),
+            Account(website: "SwiftBook", password: "12345678")
+        ]
     }
 
 }

@@ -16,6 +16,7 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate, Password
     
     // MARK: - Public Properties
     var account: Account!
+    var dataManager: DataManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +74,7 @@ extension EditAccountViewController {
     }
 }
 
-// MARK: - Public Metgods
+// MARK: - Public Methods
 extension EditAccountViewController {
     func passwordRegularExpressionCheck(for text: String) {
         if (isValidPassword(text)) {

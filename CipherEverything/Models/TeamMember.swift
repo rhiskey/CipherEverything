@@ -20,24 +20,21 @@ struct TeamMember {
     }
     
     static func getTeamMember() -> [TeamMember] {
-        
-        var teamMembers: [TeamMember] = []
-        
-        teamMembers.append(TeamMember(name: "Evgeniy",
-                                      surname: "Voloshenko",
-                                      description: "IOS Developer",
-                                      photo: UIImage(named: "Evgeniy")))
-        
-        teamMembers.append(TeamMember(name: "Vladimir",
-                                      surname: "Kiselev",
-                                      description: "IOS Developer",
-                                      photo: UIImage(named: "Vladimir")))
-        
-        teamMembers.append(TeamMember(name: "Sergey",
-                                      surname: "Veretennikov",
-                                      description: "IOS Developer",
-                                      photo: UIImage(named: "Sergey")))
-        
-        return teamMembers
+        [
+            TeamMember(name: "Evgeniy",
+                       surname: "Voloshenko",
+                       description: "IOS Developer",
+                       photo: UIImage(named: "Evgeniy")),
+            
+            TeamMember(name: "Vladimir",
+                       surname: "Kiselev",
+                       description: "Team Lead",
+                       photo: UIImage(named: "Vladimir")),
+            
+            TeamMember(name: "Sergey",
+                       surname: "Veretennikov",
+                       description: "IOS Developer",
+                       photo: UIImage(named: "Sergey"))
+        ]
     }
 }
