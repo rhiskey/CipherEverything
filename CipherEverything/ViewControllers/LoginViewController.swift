@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var passwordTF: UITextField!
     @IBOutlet var usernameTF: UITextField!
@@ -22,6 +22,17 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem?.title = "Exit"
+        
+        usernameTF.delegate = self
+        passwordTF.delegate = self
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print(usersData.usersList.count)
     }
     
     @IBAction func logInPressed() {
@@ -78,4 +89,29 @@ extension LoginViewController {
     }
 }
 
+//MARK: Unwind segue
+extension LoginViewController {
+    
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+        usernameTF.text = nil
+        passwordTF.text = nil
+    }
+    
+}
 
+extension LoginViewController {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if usernameTF.isFirstResponder {
+            passwordTF.becomeFirstResponder()
+        } else {
+            logInPressed()
+        }
+        return true
+    }
+}
