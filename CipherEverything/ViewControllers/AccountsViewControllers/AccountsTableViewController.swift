@@ -14,7 +14,8 @@ protocol AddNewAccountViewControllerDelegate {
 class AccountsTableViewController: UITableViewController {
     
     // MARK: - Public Properties
-    var dataManager: DataManager!
+    var personData: Person!
+    var personsAccounts = Users.usersData
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +29,14 @@ class AccountsTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        dataManager.getAccounts().count
+        personsAccounts.users[personData.usersID].accounts.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "passwordCell", for: indexPath)
         var content = cell.defaultContentConfiguration()
         
-        content.text = dataManager.getAccounts()[indexPath.row].website
+        content.text = personsAccounts.users[personData.usersID].accounts[indexPath.row].website
         content.image = UIImage(systemName: "key")
         
         cell.contentConfiguration = content
@@ -46,15 +47,14 @@ class AccountsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         true
     }
-
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let accountInCell = dataManager.getAccounts()[indexPath.row]
-
+            
             showAlert(
                 title: "Warning!",
                 message: "Do you really want to delete account?",
-                account: accountInCell
+                account: indexPath.row
             )
         }
     }
@@ -63,21 +63,21 @@ class AccountsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let addAccountVC = segue.destination as? AddNewAccountViewController {
             addAccountVC.delegate = self
-            addAccountVC.dataManager = dataManager
+            addAccountVC.personData = personData
         }
-            
+        
         guard let editAccountVC = segue.destination as? EditAccountViewController,
               let indexPath = tableView.indexPathForSelectedRow else { return }
-        editAccountVC.account = dataManager.getAccounts()[indexPath.row]
+        editAccountVC.account = personsAccounts.users[personData.usersID].accounts[indexPath.row]
     }
 }
 
 // MARK: - Alert
 extension AccountsTableViewController {
-    private func showAlert(title: String, message massage: String, account: Account) {
+    private func showAlert(title: String, message massage: String, account: Int) {
         let alert = UIAlertController(title: title, message: massage, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
-            self.dataManager.delete(of: account)
+            self.personsAccounts.users[self.personData.usersID].accounts.remove(at: account)
             self.tableView.reloadData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)

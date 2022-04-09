@@ -10,10 +10,13 @@ import UIKit
 class LoginViewController: UIViewController {
     
     @IBOutlet var passwordTF: UITextField!
+    @IBOutlet var usernameTF: UITextField!
     
     private let dataManager = DataManager.shared
     // TODO: Think about it, what is the best approach? Maybe get from DataManager?
-    private let person = Person.getPerson()
+    private var person = Person.getPerson()
+    
+    private let sharedUsers = Users.usersData
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +24,13 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func logInPressed() {
-        if passwordTF.text != person.password {
-            showAlertForLogin(with: "Wrong password!", and: "Try again")
+        if let userID = sharedUsers.usersList[usernameTF.text ?? ""] {
+            if sharedUsers.users[userID].password == passwordTF.text {
+                person = sharedUsers.users[userID]
+                return
+            }
+        } else {
+            showAlertForLogin(with: "Wrong pass or login", and: "Try again")
         }
     }
     
@@ -38,7 +46,7 @@ class LoginViewController: UIViewController {
         viewControllers.forEach {
             if let navigationVC = $0 as? UINavigationController {
                 if let accountsVC = navigationVC.topViewController as? AccountsTableViewController {
-                    accountsVC.dataManager = dataManager
+                    accountsVC.personData = person
                 } else if let teamVC = navigationVC.topViewController as? TeamTableViewController {
                     teamVC.dataManager = dataManager
                 }

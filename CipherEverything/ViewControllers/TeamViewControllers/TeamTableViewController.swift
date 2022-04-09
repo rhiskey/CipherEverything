@@ -17,11 +17,6 @@ class TeamTableViewController: UITableViewController {
         
         tableView.isScrollEnabled = false
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tabBarController?.navigationItem.title = "Team"
-    }
     
     // MARK: - TableView Data Source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
