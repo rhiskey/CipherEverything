@@ -69,6 +69,8 @@ class AccountsTableViewController: UITableViewController {
         guard let editAccountVC = segue.destination as? EditAccountViewController,
               let indexPath = tableView.indexPathForSelectedRow else { return }
         editAccountVC.account = personsAccounts.users[personData.usersID].accounts[indexPath.row]
+        editAccountVC.accountIndex = indexPath.row
+        editAccountVC.personsData = personData
     }
 }
 

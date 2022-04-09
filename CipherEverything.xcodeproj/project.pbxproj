@@ -73,7 +73,6 @@
 		5BF1183F27F89601004A55E7 = {
 			isa = PBXGroup;
 			children = (
-				147D232F2801A5E20072FCF1 /* RegisterViewController.swift */,
 				5BF1186C27F898BE004A55E7 /* README.md */,
 				5BF1184A27F89601004A55E7 /* CipherEverything */,
 				5BF1184927F89601004A55E7 /* Products */,
@@ -116,6 +115,7 @@
 		5BF1186027F89614004A55E7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				147D232F2801A5E20072FCF1 /* RegisterViewController.swift */,
 				5BF1184F27F89601004A55E7 /* LoginViewController.swift */,
 				A591AC0B27FE1FE5002894A2 /* AccountsViewControllers */,
 				A591AC0C27FE1FFC002894A2 /* TeamViewControllers */,

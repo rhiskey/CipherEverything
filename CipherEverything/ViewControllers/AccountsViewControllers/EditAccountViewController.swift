@@ -16,7 +16,9 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate, Password
     
     // MARK: - Public Properties
     var account: Account!
-    var dataManager: DataManager!
+    var accountIndex: Int!
+    var personsData: Person!
+    var usersData = Users.usersData
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +59,9 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate, Password
         let newAccount = Account(website: account.website,
                                  password: passwordTF.text ?? "")
         
-        DataManager.shared.update(of: newAccount)
+        usersData.users[personsData.usersID].accounts.remove(at: accountIndex)
+        
+        usersData.users[personsData.usersID].accounts.append(newAccount)
         
         navigationController?.popViewController(animated: true)
     }
