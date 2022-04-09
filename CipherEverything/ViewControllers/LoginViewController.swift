@@ -46,7 +46,7 @@ class LoginViewController: UIViewController {
         viewControllers.forEach {
             if let navigationVC = $0 as? UINavigationController {
                 if let accountsVC = navigationVC.topViewController as? AccountsTableViewController {
-                    accountsVC.dataManager = person
+                    accountsVC.personData = person
                 } else if let teamVC = navigationVC.topViewController as? TeamTableViewController {
                     teamVC.dataManager = dataManager
                 }
