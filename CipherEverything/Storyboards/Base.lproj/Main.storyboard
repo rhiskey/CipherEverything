@@ -50,6 +50,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Accounts" id="hg2-sv-Uh1">
+                        <barButtonItem key="leftBarButtonItem" title="Exit" id="AxO-VC-C4X">
+                            <connections>
+                                <segue destination="0HA-XQ-NbQ" kind="unwind" unwindAction="unwind:" id="BEw-9q-mcv"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="TAi-UQ-YQ9">
                             <connections>
                                 <segue destination="v53-3H-lRT" kind="presentation" identifier="showAddPasword" id="bPW-Q7-XoU"/>
@@ -58,6 +63,7 @@
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KxC-wu-tMJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="0HA-XQ-NbQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3763.125" y="-450"/>
         </scene>
@@ -138,9 +144,16 @@
                             <outlet property="delegate" destination="8mS-BA-1vX" id="ls2-59-wr1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="TeamMembers" id="YOf-7j-IbB"/>
+                    <navigationItem key="navigationItem" title="TeamMembers" id="YOf-7j-IbB">
+                        <barButtonItem key="leftBarButtonItem" title="Exit" id="rLQ-lH-o3g">
+                            <connections>
+                                <segue destination="Oqc-nx-Zw3" kind="unwind" unwindAction="unwind:" id="tQf-JW-MsV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NFR-yc-7aM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Oqc-nx-Zw3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3763.125" y="513.75"/>
         </scene>
@@ -353,11 +366,11 @@
             <objects>
                 <viewController id="4I6-2H-rBg" customClass="RegisterViewController" customModule="CipherEverything" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zqG-Yt-07b">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="9pr-dZ-Wgh">
-                                <rect key="frame" x="43.5" y="191.5" width="288" height="264.5"/>
+                                <rect key="frame" x="43.5" y="164" width="288" height="339.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your username and password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6v-JE-adj">
                                         <rect key="frame" x="10" y="0.0" width="268.5" height="20.5"/>
@@ -368,26 +381,35 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="F2C-If-2Bx">
                                         <rect key="frame" x="0.0" y="78.5" width="288" height="97"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zhv-mS-UXM">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zhv-mS-UXM">
                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="288" id="X6P-ou-tYf"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J5u-Pb-OyH">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J5u-Pb-OyH">
                                                 <rect key="frame" x="0.0" y="63" width="288" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="288" id="8Au-PA-5IW"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                <connections>
+                                                    <action selector="passwordEditingChanged:" destination="4I6-2H-rBg" eventType="editingChanged" id="ogR-Uo-NRf"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ar-QN-HYU">
+                                        <rect key="frame" x="126.5" y="233.5" width="35.5" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78w-3R-c2B">
-                                        <rect key="frame" x="107.5" y="233.5" width="73" height="31"/>
+                                        <rect key="frame" x="107.5" y="308.5" width="73" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Sing up"/>
                                         <connections>
@@ -395,6 +417,9 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="78w-3R-c2B" firstAttribute="top" secondItem="J5u-Pb-OyH" secondAttribute="bottom" constant="133" id="Tur-Un-A5z"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="e1P-4i-DQk"/>
@@ -404,7 +429,9 @@
                             <constraint firstItem="9pr-dZ-Wgh" firstAttribute="centerX" secondItem="zqG-Yt-07b" secondAttribute="centerX" id="HxV-yx-Xhh"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="lcE-wF-Rdo"/>
                     <connections>
+                        <outlet property="checkPassLabel" destination="7Ar-QN-HYU" id="HHm-uA-2EG"/>
                         <outlet property="passwordTF" destination="J5u-Pb-OyH" id="v9s-R3-zAZ"/>
                         <outlet property="userNameTF" destination="zhv-mS-UXM" id="T9z-a0-bQD"/>
                     </connections>
@@ -427,7 +454,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5I6-18-R3s">
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="OyU-ok-EzV">
                                         <rect key="frame" x="0.0" y="50" width="311" height="34"/>
@@ -435,7 +462,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pGS-jK-Rcg">
                                                 <rect key="frame" x="0.0" y="0.0" width="311" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -480,7 +507,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="TjM-Mf-V51">
-                                <rect key="frame" x="115" y="88.5" width="145" height="70"/>
+                                <rect key="frame" x="115" y="95" width="145" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cipher" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ft-yx-QIc">
                                         <rect key="frame" x="0.0" y="0.0" width="145" height="33.5"/>
@@ -507,13 +534,13 @@
                             <constraint firstItem="HzK-TW-kn9" firstAttribute="leading" secondItem="UDW-EG-Arn" secondAttribute="leading" constant="32" id="N0o-LJ-fba"/>
                             <constraint firstItem="TjM-Mf-V51" firstAttribute="centerX" secondItem="P2c-w2-7kM" secondAttribute="centerX" id="gbY-Fb-gy0"/>
                             <constraint firstItem="UDW-EG-Arn" firstAttribute="trailing" secondItem="HzK-TW-kn9" secondAttribute="trailing" constant="32" id="nxQ-bx-zF6"/>
-                            <constraint firstItem="TjM-Mf-V51" firstAttribute="centerY" secondItem="P2c-w2-7kM" secondAttribute="centerY" multiplier="0.37" priority="1" id="x3y-lV-MfV"/>
+                            <constraint firstItem="TjM-Mf-V51" firstAttribute="centerY" secondItem="P2c-w2-7kM" secondAttribute="centerY" multiplier="0.39" priority="1" id="x3y-lV-MfV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Log In" id="9V1-1f-lf0">
                         <barButtonItem key="rightBarButtonItem" title="Sign up" id="0JB-8b-Glu">
                             <connections>
-                                <segue destination="4I6-2H-rBg" kind="presentation" id="Dkm-GH-5PB"/>
+                                <segue destination="4I6-2H-rBg" kind="show" id="Dkm-GH-5PB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
