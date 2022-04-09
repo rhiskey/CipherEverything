@@ -8,13 +8,13 @@
 import UIKit
 
 class DeveloperTableViewCell: UITableViewCell {
-
+    
     @IBOutlet var developerName: UILabel!
     @IBOutlet var developerSurname: UILabel!
     @IBOutlet var developerProff: UILabel!
     
     @IBOutlet var developerImage: UIImageView!
-
+    
     func forceChanges(teamMember: TeamMember) {
         
         let size = CGSize(width: 84, height: 84)
@@ -27,7 +27,7 @@ class DeveloperTableViewCell: UITableViewCell {
         
         self.developerImage.image = resizedImage
         self.developerImage.layer.cornerRadius = self.developerImage.frame.height / 2
-
+        
         let borderColor = UIColor(red:0, green:0, blue:0, alpha:1.0)
         self.developerImage.layer.borderColor = borderColor.cgColor
         self.developerImage.layer.borderWidth = 3.0

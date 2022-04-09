@@ -16,7 +16,8 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, Passwo
     
     // MARK: - Public Properties
     var delegate: AccountsTableViewController!
-    var dataManager: DataManager!
+    var dataManager: Person!
+    var usersData = Users.usersData
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +43,7 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, Passwo
         let newAccount = Account(website: website,
                                  password: password)
         
-        dataManager.addNew(account: newAccount)
+        usersData.users[dataManager.usersID].accounts.append(newAccount)
         delegate.updateTable()
         dismiss(animated: true)
     }

@@ -104,7 +104,7 @@ extension EditAccountViewController: UITextViewDelegate {
         super .touchesBegan(touches, with: event)
         view.endEditing(true)
     }
-
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
         return true
