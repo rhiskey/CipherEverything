@@ -14,8 +14,8 @@ protocol AddNewAccountViewControllerDelegate {
 class AccountsTableViewController: UITableViewController {
     
     // MARK: - Public Properties
-    var personData: Person!
-    var personsAccounts = Users.usersData
+    var person: Person!
+    var personData = Users.usersData
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,14 +29,14 @@ class AccountsTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        personsAccounts.users[personData.usersID].accounts.count
+        personData.users[person.usersID].accounts.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "passwordCell", for: indexPath)
         var content = cell.defaultContentConfiguration()
         
-        content.text = personsAccounts.users[personData.usersID].accounts[indexPath.row].website
+        content.text = personData.users[person.usersID].accounts[indexPath.row].website
         content.image = UIImage(systemName: "key")
         
         cell.contentConfiguration = content
@@ -63,12 +63,14 @@ class AccountsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let addAccountVC = segue.destination as? AddNewAccountViewController {
             addAccountVC.delegate = self
-            addAccountVC.personData = personData
+            addAccountVC.personData = person
         }
         
         guard let editAccountVC = segue.destination as? EditAccountViewController,
               let indexPath = tableView.indexPathForSelectedRow else { return }
-        editAccountVC.account = personsAccounts.users[personData.usersID].accounts[indexPath.row]
+        editAccountVC.account = personData.users[person.usersID].accounts[indexPath.row]
+        editAccountVC.accountIndex = indexPath.row
+        editAccountVC.personsData = person
     }
 }
 
@@ -77,7 +79,7 @@ extension AccountsTableViewController {
     private func showAlert(title: String, message massage: String, account: Int) {
         let alert = UIAlertController(title: title, message: massage, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
-            self.personsAccounts.users[self.personData.usersID].accounts.remove(at: account)
+            self.personData.users[self.person.usersID].accounts.remove(at: account)
             self.tableView.reloadData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)

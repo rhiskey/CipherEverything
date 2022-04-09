@@ -7,20 +7,32 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var passwordTF: UITextField!
     @IBOutlet var usernameTF: UITextField!
     
+    private let usersData = Users.usersData
     private let dataManager = DataManager.shared
     // TODO: Think about it, what is the best approach? Maybe get from DataManager?
-    private var person = Person.getPerson()
+    private var person: Person?
     
     private let sharedUsers = Users.usersData
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem?.title = "Exit"
+        
+        usernameTF.delegate = self
+        passwordTF.delegate = self
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print(usersData.usersList.count)
     }
     
     @IBAction func logInPressed() {
@@ -29,13 +41,12 @@ class LoginViewController: UIViewController {
                 person = sharedUsers.users[userID]
                 return
             }
-        } else {
-            showAlertForLogin(with: "Wrong pass or login", and: "Try again")
         }
+        showAlertForLogin(with: "Wrong pass or login", and: "Try again")
     }
     
     @IBAction func forgotPassButtonPressed() {
-        showAlert(with: "I will tell you", and: person.password)
+        showAlert(with: "I will tell you", and: "Password")
     }
     
     // MARK: - Navigation
@@ -46,7 +57,7 @@ class LoginViewController: UIViewController {
         viewControllers.forEach {
             if let navigationVC = $0 as? UINavigationController {
                 if let accountsVC = navigationVC.topViewController as? AccountsTableViewController {
-                    accountsVC.personData = person
+                    accountsVC.person = person
                 } else if let teamVC = navigationVC.topViewController as? TeamTableViewController {
                     teamVC.dataManager = dataManager
                 }
@@ -78,4 +89,29 @@ extension LoginViewController {
     }
 }
 
+//MARK: Unwind segue
+extension LoginViewController {
+    
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+        usernameTF.text = nil
+        passwordTF.text = nil
+    }
+    
+}
 
+extension LoginViewController {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if usernameTF.isFirstResponder {
+            passwordTF.becomeFirstResponder()
+        } else {
+            logInPressed()
+        }
+        return true
+    }
+}

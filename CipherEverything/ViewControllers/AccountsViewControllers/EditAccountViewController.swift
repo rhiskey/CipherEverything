@@ -16,7 +16,9 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate, Password
     
     // MARK: - Public Properties
     var account: Account!
-    var dataManager: DataManager!
+    var personsData: Person!
+    var usersData = Users.usersData
+    var accountIndex: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +59,9 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate, Password
         let newAccount = Account(website: account.website,
                                  password: passwordTF.text ?? "")
         
-        DataManager.shared.update(of: newAccount)
+        usersData.users[personsData.usersID].accounts.remove(at: accountIndex)
+        
+        usersData.users[personsData.usersID].accounts.append(newAccount)
         
         navigationController?.popViewController(animated: true)
     }
@@ -101,7 +105,7 @@ extension EditAccountViewController {
 // MARK: - UITextFieldDelegate
 extension EditAccountViewController: UITextViewDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super .touchesBegan(touches, with: event)
+        super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
     
