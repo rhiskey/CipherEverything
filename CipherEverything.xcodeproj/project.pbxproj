@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		146B585327FCA03200CE6B0B /* DeveloperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B585227FCA03200CE6B0B /* DeveloperTableViewCell.swift */; };
+		147D232E280197DD0072FCF1 /* UsersData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D232D280197DD0072FCF1 /* UsersData.swift */; };
+		147D23302801A5E20072FCF1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D232F2801A5E20072FCF1 /* RegisterViewController.swift */; };
 		5B9999D227FED0BF000E268C /* PasswordCheckerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9999D127FED0BF000E268C /* PasswordCheckerProtocol.swift */; };
 		5BB880E628003D65008A45FE /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB880E528003D65008A45FE /* Person.swift */; };
 		5BBB893827F9FF6200E78E5C /* AccountsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB893727F9FF6200E78E5C /* AccountsTableViewController.swift */; };
@@ -27,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		146B585227FCA03200CE6B0B /* DeveloperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperTableViewCell.swift; sourceTree = "<group>"; };
+		147D232D280197DD0072FCF1 /* UsersData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersData.swift; sourceTree = "<group>"; };
+		147D232F2801A5E20072FCF1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5B9999D127FED0BF000E268C /* PasswordCheckerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCheckerProtocol.swift; sourceTree = "<group>"; };
 		5BB880E528003D65008A45FE /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		5BBB893727F9FF6200E78E5C /* AccountsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsTableViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +73,7 @@
 		5BF1183F27F89601004A55E7 = {
 			isa = PBXGroup;
 			children = (
+				147D232F2801A5E20072FCF1 /* RegisterViewController.swift */,
 				5BF1186C27F898BE004A55E7 /* README.md */,
 				5BF1184A27F89601004A55E7 /* CipherEverything */,
 				5BF1184927F89601004A55E7 /* Products */,
@@ -141,6 +146,7 @@
 				5BF1186727F89685004A55E7 /* TeamMember.swift */,
 				5BBB893B27F9FF9600E78E5C /* Account.swift */,
 				5BB880E528003D65008A45FE /* Person.swift */,
+				147D232D280197DD0072FCF1 /* UsersData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -256,6 +262,8 @@
 				5B9999D227FED0BF000E268C /* PasswordCheckerProtocol.swift in Sources */,
 				146B585327FCA03200CE6B0B /* DeveloperTableViewCell.swift in Sources */,
 				5BF1185027F89601004A55E7 /* LoginViewController.swift in Sources */,
+				147D23302801A5E20072FCF1 /* RegisterViewController.swift in Sources */,
+				147D232E280197DD0072FCF1 /* UsersData.swift in Sources */,
 				5BF1186627F8966F004A55E7 /* DataManager.swift in Sources */,
 				5BF1184C27F89601004A55E7 /* AppDelegate.swift in Sources */,
 				5BBB893827F9FF6200E78E5C /* AccountsTableViewController.swift in Sources */,
