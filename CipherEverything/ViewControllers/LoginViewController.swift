@@ -12,9 +12,10 @@ class LoginViewController: UIViewController {
     @IBOutlet var passwordTF: UITextField!
     @IBOutlet var usernameTF: UITextField!
     
+    private let usersData = Users.usersData
     private let dataManager = DataManager.shared
     // TODO: Think about it, what is the best approach? Maybe get from DataManager?
-    private var person = Person.getPerson()
+    private var person: Person?
     
     private let sharedUsers = Users.usersData
     
@@ -29,13 +30,12 @@ class LoginViewController: UIViewController {
                 person = sharedUsers.users[userID]
                 return
             }
-        } else {
-            showAlertForLogin(with: "Wrong pass or login", and: "Try again")
         }
+        showAlertForLogin(with: "Wrong pass or login", and: "Try again")
     }
     
     @IBAction func forgotPassButtonPressed() {
-        showAlert(with: "I will tell you", and: person.password)
+        showAlert(with: "I will tell you", and: "Password")
     }
     
     // MARK: - Navigation
@@ -46,7 +46,7 @@ class LoginViewController: UIViewController {
         viewControllers.forEach {
             if let navigationVC = $0 as? UINavigationController {
                 if let accountsVC = navigationVC.topViewController as? AccountsTableViewController {
-                    accountsVC.personData = person
+                    accountsVC.person = person
                 } else if let teamVC = navigationVC.topViewController as? TeamTableViewController {
                     teamVC.dataManager = dataManager
                 }
